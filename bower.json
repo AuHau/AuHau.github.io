@@ -22,6 +22,22 @@
   "private": true,
   "dependencies": {
     "jquery": "~2.1.4",
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "jquery.scrollTo": "~2.1.2",
+    "font-awesome": "~4.4.0"
+  },
+
+  "overrides": {
+    "font-awesome" : {
+      "main": [
+        "css/font-awesome.css",
+        "scss/font-awesome.scss",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.svg"
+      ]
+    }
   }
 }
