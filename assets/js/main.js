@@ -4,7 +4,7 @@ var menuHandler = function (index, nextIndex, direction) {
 
     var duration;
     if(direction == 'up'){
-        duration = 100;
+        duration = 180;
     }else{
         duration = 480;
     }
