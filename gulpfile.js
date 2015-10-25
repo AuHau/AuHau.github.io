@@ -13,7 +13,7 @@ var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
     autoprefix= new LessPluginAutoPrefix({browsers: ["last 2 versions"]});
 
 gulp.task('css:production', function() {
-    return gulp.src('less/main.less')
+    return gulp.src('assets/less/main.less')
         .pipe(plugins.less({
             plugins: [autoprefix, cleancss]
         }))
@@ -27,7 +27,7 @@ gulp.task('css:production', function() {
 });
 
 gulp.task('css', function() {
-    return gulp.src('less/main.less')
+    return gulp.src('assets/less/main.less')
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.less({
             plugins: [autoprefix, cleancss]
@@ -42,7 +42,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('js:production', function() {
-    return gulp.src(['js/**/*.js'])
+    return gulp.src(['assets/js/**/*.js'])
         .pipe(plugins.concat('main.js'))
         .pipe(plugins.uglify())
         .pipe(gulp.dest('build/js/'))
@@ -50,10 +50,16 @@ gulp.task('js:production', function() {
 });
 
 gulp.task('js', function() {
-    return gulp.src(['js/*.js'])
+    return gulp.src(['assets/js/*.js'])
         .pipe(plugins.concat('main.js'))
         .pipe(gulp.dest('build/js/'))
         .pipe(plugins.notify('JS build finished'));
+});
+
+
+gulp.task('images', function() {
+    return gulp.src(['assets/images/**/*'])
+        .pipe(gulp.dest('build/images/'));
 });
 
 gulp.task('js:libs', function() {
@@ -65,20 +71,20 @@ gulp.task('js:libs', function() {
         .pipe(gulp.dest('build/js/'));
 });
 
-gulp.task('assets:fonts', function() {
+gulp.task('fonts', function() {
     var fonts = ['ttf', 'woff', 'eot', 'svg'].join(',');
 
     return gulp.src(mainBowerFiles())
         .pipe(plugins.ignore.include('**/*.{'+ fonts +'}'))
-        .pipe(plugins.addSrc('fonts/**/*.{'+ fonts +'}'))
+        .pipe(plugins.addSrc('assets/fonts/**/*.{'+ fonts +'}'))
         .pipe(plugins.flatten())
         .pipe(gulp.dest('build/fonts/'))
 });
 
-gulp.task('build', ['js', 'js:libs', 'css', 'assets:fonts']);
-gulp.task('build:production', ['js:production', 'js:libs', 'css:production', 'assets:fonts']);
+gulp.task('build', ['js', 'js:libs', 'css', 'fonts', 'images']);
+gulp.task('build:production', ['js:production', 'js:libs', 'css:production', 'fonts', 'images']);
 
 gulp.task('default', ['build'], function() {
-    gulp.watch('less/**', ['css']);
-    gulp.watch('js/**', ['js']);
+    gulp.watch('assets/less/**', ['css']);
+    gulp.watch('assets/js/**', ['js']);
 });

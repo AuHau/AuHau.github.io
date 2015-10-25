@@ -1,0 +1,79 @@
+.main{
+  .welcome{
+    background: url('../images/main.jpg') no-repeat no-repeat center;
+    background-size: cover;
+
+    .welcome-container{
+      width: 100%;
+      height: 100%;
+      background-color: rgba(76, 50, 0, 0.4);
+    }
+
+    .hello, .work{
+      width: 100%;
+      position: absolute;
+      text-align: center;
+    }
+
+    .hello{
+      top: 50%;
+      margin-top: -111px;
+
+      .i-am{
+        font-size: 60px;
+      }
+
+      .portfolio{
+        font-size: 36px;
+      }
+    }
+
+    .work{
+      bottom: 15%;
+      font-size: 36px;
+    }
+
+    .links{
+      margin-top: 25px;
+
+      a{
+        display: inline-block;
+        width: 290px;
+        padding: 15px;
+        position: relative;
+        text-align: center;
+        border: 3px solid white;
+        border-radius: 30px;
+
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 18px;
+
+        &:hover{
+          color: @orange;
+          border-color: @orange;
+          text-decoration: none;
+        }
+
+        i{
+          position: absolute;
+          font-size: 28px;
+          top: 11px;
+          font-weight: 400;
+        }
+
+        &.toPhoto{
+          margin-right: 40px;
+
+          i{
+            left: 20px;
+          }
+        }
+
+        &.toIt i{
+          right: 20px;
+        }
+      }
+    }
+  }
+}
