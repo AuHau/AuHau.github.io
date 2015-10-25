@@ -27,9 +27,22 @@ html, body {
   width: 100vw;
   height: 100vh;
   position: relative;
+  display: table;
 
-  & > h1:first-child{
+  h2{
     margin-top: 0;
+    text-align: center;
+  }
+
+  .frame-align{
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .frame-overlay{
+    display: table;
+    width: 100%;
+    height: 100%;
   }
 }
 

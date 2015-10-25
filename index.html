@@ -15,7 +15,7 @@
         <a href="#"><img src="build/images/logo.png" alt="Adam Uhlir"></a>
         <ul id="navbar" class="navbar">
             <li><a href="#about-me">About me</a></li>
-            <li><a href="#">Choice</a></li>
+            <li><a href="#choice">Choice</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
@@ -30,14 +30,14 @@
                 I work as...
 
                 <div class="links">
-                    <a href="#" class="toPhoto"><i class="fa fa-chevron-left"></i>Photographer</a>
+                    <a href="#" class="toPhoto"><span class="arrow-left"></span> Photographer</a>
                     <a href="#" class="toIt">Developer <i class="fa fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
     <div class="frame" id="about-me">
-        <div class="about-me-container">
+        <div class="frame-align">
             <h2>About me</h2>
 
             <div class="text-container">
@@ -69,8 +69,40 @@
             <!--</div>-->
         </div>
     </div>
-    <div class="frame white" id="choice">
-        <h2>Which of my dark sides you want to discover?</h2>
+    <div class="frame" id="choice">
+        <div class="frame-overlay">
+            <div class="frame-align">
+                <h2>Which of my <span class="dark">dark</span> sides you want to discover?</h2>
+
+                <div class="col-md-6">
+                    <a href="#" class="toPhoto">
+                        <span class="arrow-left-big"></span>
+                        <span class="choice-image">
+                            <img src="build/images/photo.png" alt="Photographer">
+                            <span class="overlay">
+                                <span class="overlay-align">
+                                    <span class="overlay-text">Photographer</span>
+                                </span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="#" class="toIt">
+                        <span class="choice-image">
+                            <img src="build/images/developer.png" alt="Software developer">
+                            <span class="overlay">
+                                <span class="overlay-align">
+                                    <span class="overlay-text">Software developer</span>
+                                </span>
+                            </span>
+                        </span>
+                        <span class="arrow-right-big"></span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>
 
