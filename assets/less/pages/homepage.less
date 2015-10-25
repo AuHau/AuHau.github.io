@@ -55,15 +55,32 @@
           text-decoration: none;
         }
 
-
-
         &.toPhoto{
           margin-right: 40px;
 
+          &:before:extend(.arrow-left){
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 7px;
+          }
+
+          &:hover:before{
+            background-position: -2px -74px ;
+          }
         }
 
-        &.toIt i{
-          right: 20px;
+        &.toIt{
+          &:before:extend(.arrow-right){
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 7px;
+          }
+
+          &:hover:before{
+            background-position: 0 0;
+          }
         }
       }
     }
