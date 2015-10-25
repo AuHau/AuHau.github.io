@@ -1,51 +1,24 @@
-var site = {
-    page: 'main',
-    lastPositionX: 0,
-    lastPositionY: 0
-};
+var menuHandler = function (index, nextIndex, direction) {
+    var nav = $('nav');
+    nextIndex--;
 
-var toIt = function (e) {
-    site.page = 'it';
-    $(window).scrollTo($('.it'), 100);
-
-    e.preventDefault();
-};
-
-var toPhoto = function (e) {
-    site.page = 'photo';
-    var windowSize = $(window).width() * -1;
-    $(window).scrollTo($('.photo'), 100, {'offset' : {left: windowSize}});
-
-    e.preventDefault();
-};
-
-var back = function (e) {
-    site.page = 'main';
-    $(window).scrollTo($('.main'), 100);
-
-    e.preventDefault();
-};
-
-var finnishLoading = function () {
-    $(window).scrollTo($('.main'), 200, { complete : function () {
-        var loadDiv = $('.load').css('opacity', 0);
-
+    if(!framesMenuClasses[nextIndex]){
         setTimeout(function () {
-            loadDiv.remove();
-        }, 500);
-    }});
-};
-
-var resizeHandler = function () {
-    $(window).scrollTo($('.' + site.page), 0);
+            nav.removeClass();
+        }, 300);
+    }else if(!nav.hasClass(framesMenuClasses[nextIndex])){
+        setTimeout(function () {
+            nav.removeClass().addClass(framesMenuClasses[nextIndex]);
+        }, 300);
+    }
 };
 
 $(document).ready(function(){
-    $('.toIt').click(toIt);
-    $('.toPhoto').click(toPhoto);
-    $('.back').click(back);
-    $(window).resize(resizeHandler);
+    $('.main').fullpage({
+        sectionSelector: '.frame',
+        menu: '#menu',
+        recordHistory: false,
+        scrollBar: true,
+        onLeave: menuHandler
+    });
 });
-
-//finnishLoading();
-$(window).scrollTo($('.main'), 0);

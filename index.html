@@ -7,19 +7,16 @@
     <link rel="stylesheet" href="build/css/main.css">
 </head>
 <body>
-<!--<div class="load">-->
-<!--<i class="fa fa-circle-o-notch fa-spin spinner"></i>-->
-<!--</div>-->
-<div class="main" data-spy="scroll"  data-target="#navbar">
-    <nav>
-        <a href="#"><img src="build/images/logo.png" alt="Adam Uhlir"></a>
-        <ul id="navbar" class="navbar">
-            <li><a href="#about-me">About me</a></li>
-            <li><a href="#choice">Choice</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="frame" id="welcome">
+<nav>
+    <div class="logo"></div>
+    <ul id="menu">
+        <li data-menuanchor="about-me"><a href="#about-me">About me</a></li>
+        <li data-menuanchor="choice"><a href="#choice">Choice</a></li>
+        <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+<div class="main page">
+    <div class="frame welcome" data-anchor="welcome">
         <div class="welcome-container">
             <div class="hello">
                 <div class="i-am">Hello, I am Adam Uhlíř</div>
@@ -30,13 +27,13 @@
                 I work as...
 
                 <div class="links">
-                    <a href="#" class="toPhoto">Photographer</a>
-                    <a href="#" class="toIt">Developer</a>
+                    <a href="photo.html" class="toPhoto">Photographer</a>
+                    <a href="it.html" class="toIt">Developer</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="frame" id="about-me">
+    <div class="frame about-me" data-anchor="about-me">
         <div class="frame-align">
             <h2>About me</h2>
 
@@ -69,13 +66,13 @@
             <!--</div>-->
         </div>
     </div>
-    <div class="frame" id="choice">
+    <div class="frame choice" data-anchor="choice">
         <div class="frame-overlay">
             <div class="frame-align">
                 <h2>Which of my <span class="dark">dark</span> sides you want to discover?</h2>
 
                 <div class="col-md-6">
-                    <a href="#" class="toPhoto">
+                    <a href="photo.html" class="toPhoto">
                         <span class="arrow-left-big"></span>
                         <span class="choice-image">
                             <img src="build/images/photo.png" alt="Photographer">
@@ -88,7 +85,7 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a href="#" class="toIt">
+                    <a href="it.html" class="toIt">
                         <span class="choice-image">
                             <img src="build/images/developer.png" alt="Software developer">
                             <span class="overlay">
@@ -105,7 +102,7 @@
         </div>
     </div>
 
-    <div class="frame" id="contact">
+    <div class="frame contact" data-anchor="contact">
         <h2>Contact</h2>
         <div class="contact-details">
             Adam Uhlíř<br>
@@ -124,18 +121,10 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    var framesMenuClasses = ['', 'white', 'white', 'white'];
+</script>
 <script type="text/javascript" src="build/js/libs.js"></script>
 <script type="text/javascript" src="build/js/main.js"></script>
-
-<!--SUBPAGES - LOADED LATER -->
-
-<div class="photo">
-    <h1>Photographer</h1>
-    <a href="#" class="back">Back >></a>
-</div>
-<div class="it">
-    <h1>IT</h1>
-    <a href="#" class="back"><< Back</a>
-</div>
 </body>
 </html>

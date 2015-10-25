@@ -23,12 +23,11 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.5",
-    "jquery.scrollTo": "~2.1.2",
-    "font-awesome": "~4.4.0"
+    "font-awesome": "~4.4.0",
+    "fullpage.js": "~2.7.4"
   },
-
   "overrides": {
-    "font-awesome" : {
+    "font-awesome": {
       "main": [
         "css/font-awesome.css",
         "scss/font-awesome.scss",
