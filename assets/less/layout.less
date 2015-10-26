@@ -2,6 +2,26 @@ html, body {
   margin-top: 0;
 }
 
+.btn {
+  display: inline-block;
+  width: 290px;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 30px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 18px;
+
+  &:hover {
+    color: @orange;
+    border-color: @orange;
+    text-decoration: none;
+  }
+}
+
 .frame{
   width: 100%;
   position: relative;
@@ -33,11 +53,39 @@ html, body {
   &.orange{
     background-color: @orange;
     color: @white;
+
+    a, a:hover{
+      color: @white;
+    }
+
+    .btn{
+      color: @white;
+      border-color: @white;
+
+      &:hover{
+        background-color: @white;
+        color: @orange;
+      }
+    }
   }
 
   &.white{
     background-color: @white;
     color: @orange;
+
+    a, a:hover{
+      color: @orange;
+    }
+
+    .btn{
+      color: @orange;
+      border-color: @orange;
+
+      &:hover{
+        background-color: @orange;
+        color: @white;
+      }
+    }
   }
 }
 
@@ -48,13 +96,28 @@ nav{
   z-index: 50;
   width: 100%;
 
-  & > .logo{
+  .logo{
     display: inline-block;
     width: 69px;
     height: 41px;
+    background: url('../images/logo.png') no-repeat no-repeat;
+  }
+
+  & > .logo, .back{
+    display: inline-block;
     margin-left: 80px;
     margin-top: 13px;
-    background: url('../images/logo.png') no-repeat no-repeat;
+  }
+
+  .back{
+    &:hover{
+      text-decoration: none;
+    }
+
+    .arrow-left{
+      position: relative;
+      top: -3px;
+    }
   }
 
   ul{
@@ -80,6 +143,10 @@ nav{
           border-top: 3px solid @orange;
           padding-top: 15px;
         }
+
+        &:focus{
+          text-decoration: none;
+        }
       }
 
       &.active a{
@@ -93,7 +160,7 @@ nav{
   }
 
   &.white{
-    > .logo{
+    .logo{
       background-image: url('../images/logo-white.png');
     }
 
@@ -111,6 +178,11 @@ nav{
 
 
   &.orange{
+
+    .arrow-left{
+      background-position: -2px -74px ;
+    }
+
     ul li{
       a{
         color: @orange;
@@ -123,3 +195,4 @@ nav{
     }
   }
 }
+

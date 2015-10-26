@@ -6,7 +6,7 @@ var menuHandler = function (index, nextIndex, direction) {
     if(direction == 'up'){
         duration = 180;
     }else{
-        duration = 480;
+        duration = 540;
     }
 
     if(!framesMenuClasses[nextIndex]){
@@ -21,7 +21,7 @@ var menuHandler = function (index, nextIndex, direction) {
 };
 
 $(document).ready(function(){
-    $('.main').fullpage({
+    $('.' + container).fullpage({
         sectionSelector: '.frame',
         menu: '#menu',
         recordHistory: false,
