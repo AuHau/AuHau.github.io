@@ -12,10 +12,21 @@
 
     h2{
       text-align: left;
+      margin-bottom: 10px;
     }
 
     .text{
       margin-bottom: 40px;
+    }
+
+    .tags{
+      margin-bottom: 20px;
+
+      div{
+        display: inline-block;
+        padding: 2px 15px;
+        margin-right: 10px;
+      }
     }
 
     .check-github{
@@ -25,12 +36,23 @@
       font-weight: 400;
       border-width: 2px;
       line-height: 22px;
+      text-decoration: none;
 
       i{
         margin-left: 10px;
         font-size: 22px;
       }
     }
+  }
+
+  .orange .project-container .tags div{
+    background-color: @white;
+    color: @orange;
+  }
+
+  .white .project-container .tags div{
+    background-color: @orange;
+    color: @white;
   }
 
   .references{
