@@ -147,7 +147,7 @@ nav{
       display: inline-block;
       margin-right: 50px;
 
-      & a{
+      a{
         font-size: 22px;
         display: inline-block;
         padding: 18px 5px 15px;
@@ -173,6 +173,11 @@ nav{
         border-top: 3px solid @orange;
         padding-top: 15px;
       }
+
+      &.choice a, &.active.choice a{
+        color: #FF0000;
+        border-top-color: #FF0000;
+      }
     }
   }
 
@@ -189,6 +194,11 @@ nav{
       &.active a, a:hover, a:focus {
         color: @white;
         border-top-color: @white;
+      }
+
+      &.choice a, &.active.choice a{
+        color: #FF0000;
+        border-top-color: #FF0000;
       }
     }
   }
@@ -208,6 +218,11 @@ nav{
       &.active a, a:hover, a:focus {
         color: @orange;
         border-top-color: @orange;
+      }
+
+      &.choice a, &.active.choice a{
+        color: @light-red;
+        border-top-color: @light-red;
       }
     }
   }
