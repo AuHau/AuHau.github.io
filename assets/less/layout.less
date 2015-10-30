@@ -1,0 +1,277 @@
+html, body {
+  margin-top: 0;
+}
+
+a{
+  text-decoration: underline;
+
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+h2{
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  width: 290px;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 30px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 18px;
+  text-decoration: none;
+
+  &:hover {
+    color: @orange;
+    border-color: @orange;
+    text-decoration: none;
+  }
+}
+
+.frame{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: table;
+
+  &.pt .fp-tableCell{
+    padding-top: 64px;
+  }
+
+  h2{
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .frame-align{
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  .frame-overlay{
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+
+  .small-container{
+    width: 90%;
+    max-height: 100%;
+    margin: 0 auto;
+  }
+
+  .next:extend(.arrow-down){
+    position: absolute;
+    left: calc(~"50% - 17px");
+    bottom: 20px;
+    display: inline-block;
+    width: 34px;
+    height: 19px;
+
+
+    &:hover:extend(.arrow-down-orange){}
+  }
+
+  &.orange{
+    background-color: @orange;
+    color: @white;
+
+    a, a:hover{
+      color: @white;
+    }
+
+    .btn{
+      color: @white;
+      border-color: @white;
+
+      &:hover{
+        background-color: @white;
+        color: @orange;
+      }
+    }
+
+    .next:extend(.arrow-down){};
+    .next:hover:extend(.arrow-down){}
+  }
+
+  &.white{
+    background-color: @white;
+    color: @orange;
+
+    a, a:hover{
+      color: @orange;
+    }
+
+    .btn{
+      color: @orange;
+      border-color: @orange;
+
+      &:hover{
+        background-color: @orange;
+        color: @white;
+      }
+    }
+
+    .next:extend(.arrow-down-orange){};
+    .next:hover:extend(.arrow-down-orange){}
+  }
+}
+
+.wrapper{
+  width: 90%;
+  margin: 0 auto;
+  display: table;
+  max-height: 100%;
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+
+  .logo{
+    display: inline-block;
+    width: 69px;
+    height: 41px;
+    background: url('../images/logo.png') no-repeat no-repeat;
+  }
+
+  & > .logo, .back{
+    display: inline-block;
+    margin-left: 80px;
+    margin-top: 13px;
+  }
+
+  .back{
+    text-decoration: none;
+
+    &:hover{
+      text-decoration: none;
+    }
+
+    .arrow-left{
+      position: relative;
+      top: -3px;
+    }
+  }
+
+  ul{
+    float: right;
+    text-align: right;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+
+    li{
+      display: inline-block;
+      margin-right: 50px;
+
+      a{
+        font-size: 22px;
+        display: inline-block;
+        padding: 18px 5px 15px;
+        text-decoration: none;
+
+        &:hover {
+          background-color: transparent;
+          color: @orange;
+          text-decoration: none;
+          border-top: 3px solid @orange;
+          padding-top: 15px;
+        }
+
+        &:focus{
+          text-decoration: none;
+        }
+      }
+
+      &.active a{
+        background-color: transparent;
+        color: @orange;
+        text-decoration: none;
+        border-top: 3px solid @orange;
+        padding-top: 15px;
+      }
+
+      &.choice a, &.active.choice a{
+        color: #FF0000;
+        border-top-color: #FF0000;
+      }
+    }
+  }
+
+  &.white{
+    .logo{
+      background-image: url('../images/logo-white.png');
+    }
+
+    ul li{
+      a{
+        color: @white;
+      }
+
+      &.active a, a:hover, a:focus {
+        color: @white;
+        border-top-color: @white;
+      }
+
+      &.choice a, &.active.choice a{
+        color: #FF0000;
+        border-top-color: #FF0000;
+      }
+    }
+  }
+
+
+  &.orange{
+
+    .arrow-left{
+      background-position: -2px -74px ;
+    }
+
+    ul li{
+      a{
+        color: @orange;
+      }
+
+      &.active a, a:hover, a:focus {
+        color: @orange;
+        border-top-color: @orange;
+      }
+
+      &.choice a, &.active.choice a{
+        color: @light-red;
+        border-top-color: @light-red;
+      }
+    }
+  }
+}
+
+.mobile:extend(.frame){
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: @orange;
+  z-index: 100;
+
+  text-align: center;
+
+  .ready{
+    font-size: 30px;
+  }
+
+  .frame-align:extend(.frame .frame-align){}
+}
+

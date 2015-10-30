@@ -1,0 +1,42 @@
+{
+  "name": "adam-uhlir.me",
+  "version": "0.1.0",
+  "authors": [
+    "Adam Uhlir <hello@adam-uhlir.me>"
+  ],
+  "description": "Personal webpage of Adam Uhlir",
+  "main": "index.html",
+  "keywords": [
+    "personal",
+    "Adam Uhlir"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.adam-uhlir.me",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "fullpage.js": "~2.7.4"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css",
+        "scss/font-awesome.scss",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.svg"
+      ]
+    }
+  }
+}

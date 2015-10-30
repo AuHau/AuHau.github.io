@@ -1,0 +1,256 @@
+.main{
+  .welcome{
+    background: url('../images/main.jpg') center 70% no-repeat no-repeat;
+    background-size: cover;
+
+    .welcome-container{
+      width: 100%;
+      height: 100%;
+      background-color: rgba(76, 50, 0, 0.4);
+    }
+
+    .hello, .work{
+      width: 100%;
+      position: absolute;
+      text-align: center;
+    }
+
+    .hello{
+      top: 50%;
+      margin-top: -80px;
+
+      .i-am{
+        font-size: 60px;
+      }
+
+      .portfolio{
+        font-size: 36px;
+      }
+    }
+
+    .work{
+      bottom: 12%;
+      font-size: 36px;
+    }
+
+    .links{
+      margin-top: 25px;
+
+      .btn{
+
+        &.toPhoto{
+          margin-right: 40px;
+
+          &:before:extend(.arrow-left){
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 7px;
+          }
+
+          &:hover:before{
+            background-position: -2px -74px ;
+          }
+        }
+
+        &.toIt{
+          &:before:extend(.arrow-right){
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 7px;
+          }
+
+          &:hover:before{
+            background-position: 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  .about-me{
+    display: table;
+
+    h2{
+      margin-bottom: 40px;
+    }
+
+    .frame-align{
+      padding: 0 80px;
+    }
+
+    img.me{
+      width: 100%;
+      border-radius: 50%;
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .text-container{
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .image-container{
+      display: table;
+    }
+
+    .quote{
+      display: none;
+      width: 80%;
+      margin: 5% auto 0;
+      text-align: center;
+      font-size: 30px;
+
+      .author{
+        text-align: right;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .experiences{
+
+    h3{
+      text-align: center;
+    }
+
+    li{
+      margin-bottom: 10px;
+
+      & > ul > li{
+        margin-bottom: 0;
+      }
+
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .choice{
+    background: url('../images/darth_vader.jpg') center center no-repeat no-repeat;
+    background-size: cover;
+
+    .dark{
+      color: @red;
+    }
+
+    .frame-overlay{
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .frame-align > div{
+      text-align: center;
+    }
+
+    a.toIt, a.toPhoto{
+      display: inline-block;
+      position: relative;
+
+      .choice-image{
+        display: inline-block;
+        position: relative;
+      }
+
+      .overlay{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 50%;
+
+        display: none;
+
+        .overlay-align{
+          width: 100%;
+          height: 100%;
+          display: table;
+        }
+
+        .overlay-text{
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          font-size: 45px;
+        }
+      }
+
+      &:hover .overlay{
+        display: block;
+      }
+
+      .arrow-left-big, .arrow-right-big{
+        position: absolute;
+        top: 50%;
+        margin-top: -65px;
+      }
+
+      &.toPhoto {
+        padding-left: 60px;
+
+        .arrow-left-big{
+          left: -60px;
+        }
+      }
+
+      &.toIt {
+        padding-right: 60px;
+
+        .arrow-right-big{
+          right: -60px;
+        }
+      }
+    }
+  }
+
+  .contact{
+    text-align: center;
+
+    .contact-details{
+      margin-top: 50px;
+      font-size: 36px;
+      line-height: 60px;
+    }
+
+    .networks{
+      margin-top: 50px;
+
+      a{
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        background: no-repeat no-repeat;
+        margin-right: 20px;
+        font-size: 0;
+
+        &:last-child{
+          margin-right: 0;
+        }
+
+        &.networks-fb:extend(.fb){}
+        &.networks-fb:hover:extend(.fb-hover){}
+
+        &.networks-linkedin:extend(.linkedin){}
+        &.networks-linkedin:hover:extend(.linkedin-hover){}
+
+        &.networks-github:extend(.github){}
+        &.networks-github:hover:extend(.github-hover){}
+
+        &.networks-google:extend(.google-plus){}
+        &.networks-google:hover:extend(.google-plus-hover){}
+      }
+    }
+
+    .footer{
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
