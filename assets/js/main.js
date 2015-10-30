@@ -20,6 +20,11 @@ var menuHandler = function (index, nextIndex, direction) {
     }
 };
 
+var nextHandler = function (e) {
+    $.fn.fullpage.moveSectionDown();
+    e.preventDefault();
+};
+
 $(document).ready(function(){
     $('.' + container).fullpage({
         sectionSelector: '.frame',
@@ -28,4 +33,6 @@ $(document).ready(function(){
         scrollBar: true,
         onLeave: menuHandler
     });
+
+    $('a.next').click(nextHandler);
 });

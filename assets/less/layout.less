@@ -68,6 +68,18 @@ h2{
     margin: 0 auto;
   }
 
+  .next:extend(.arrow-down){
+    position: absolute;
+    left: calc(~"50% - 17px");
+    bottom: 20px;
+    display: inline-block;
+    width: 34px;
+    height: 19px;
+
+
+    &:hover:extend(.arrow-down-orange){}
+  }
+
   &.orange{
     background-color: @orange;
     color: @white;
@@ -85,6 +97,9 @@ h2{
         color: @orange;
       }
     }
+
+    .next:extend(.arrow-down){};
+    .next:hover:extend(.arrow-down){}
   }
 
   &.white{
@@ -104,6 +119,9 @@ h2{
         color: @white;
       }
     }
+
+    .next:extend(.arrow-down-orange){};
+    .next:hover:extend(.arrow-down-orange){}
   }
 }
 
