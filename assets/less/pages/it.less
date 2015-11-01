@@ -5,6 +5,11 @@
       display: table-cell;
       width: 50%;
       vertical-align: middle;
+
+      &:first-child{
+        width: calc(~"50% - 30px");
+        padding-right: 30px;
+      }
     }
 
     h2{
@@ -17,12 +22,13 @@
     }
 
     .tags{
-      margin-bottom: 20px;
+      margin-bottom: 10px;
 
       div{
         display: inline-block;
         padding: 2px 15px;
         margin-right: 10px;
+        margin-bottom: 10px;
       }
     }
 
@@ -149,9 +155,10 @@
   }
 
   .it-skills{
-    .college-container{
+    .collage-container{
       display: table-cell;
-      width: 30%;
+      width: calc(~"30% - 30px");
+      padding-right: 30px;
       vertical-align: middle;
       text-align: center;
     }

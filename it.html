@@ -13,21 +13,23 @@
     <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="build/css/main.css">
 </head>
-<body>
+<body class="it">
 <nav class="white">
     <a href="index.html" class="back">
         <i class="arrow-left"></i>
 
         <div class="logo"></div>
     </a>
-    <ul id="menu">
-        <li data-menuanchor="it-skills"><a href="#it-skills">My IT skills</a></li>
-        <li data-menuanchor="home-myo"><a href="#home-myo">Home Myo</a></li>
-        <li data-menuanchor="picker"><a href="#picker">Select Picker</a></li>
-        <li data-menuanchor="references"><a href="#references">References</a></li>
-    </ul>
+    <div class="menu-container nav-collapse">
+        <ul id="menu">
+            <li data-menuanchor="it-skills"><a href="#it-skills">My IT skills</a></li>
+            <li data-menuanchor="home-myo"><a href="#home-myo">Home Myo</a></li>
+            <li data-menuanchor="picker"><a href="#picker">Select Picker</a></li>
+            <li data-menuanchor="references"><a href="#references">References</a></li>
+        </ul>
+    </div>
 </nav>
-<div class="it page">
+<div class="page">
     <div class="frame it-skills pt orange" data-anchor="it-skills">
         <div class="wrapper">
             <div class="collage-container">
@@ -219,7 +221,6 @@
 
 <script type="text/javascript">
     var framesMenuClasses = ['white', 'orange', 'white', 'orange'];
-    var container = 'it';
 </script>
 <script type="text/javascript" src="build/js/libs.js"></script>
 <script type="text/javascript" src="build/js/main.js"></script>
