@@ -124,7 +124,7 @@
     }
   }
 
-  .frame:not(.choice, .welcome), .frame.choice .frame-overlay{
+  .frame:not(.choice):not(.welcome), .frame.choice .frame-overlay{
     padding: 60px 0;
   }
 }
@@ -172,6 +172,63 @@
     .menu-container{
       ul#menu li{
         width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: @screen-sm-max) {
+  .main .frame.choice{
+
+    .frame-align{
+      display: block;
+    }
+
+    a.toPhoto, a.toIt{
+      &.toPhoto {
+        padding-left: 0;
+        margin-bottom: 30px;
+      }
+
+      &.toIt {
+        padding-right: 0;
+      }
+      .arrow-left-big, .arrow-right-big{
+        display: none;
+      }
+
+      .overlay{
+        display: block;
+      }
+    }
+  }
+
+  .main .experiences{
+    .small-container{
+      text-align: center;
+    }
+
+    ul{
+      display: inline-block;
+
+      ul{
+        display: block;
+      }
+    }
+
+    li{
+      text-align: left;
+    }
+  }
+
+  .it .references{
+    .reference{
+      background-position: left;
+
+      .description{
+        bottom: 0;
+        left: 50%;
+        width: 50%;
       }
     }
   }
