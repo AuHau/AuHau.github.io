@@ -109,16 +109,11 @@
   }
 }
 
-@navbar-collapse: 800px;
-@media screen and (max-width: @navbar-collapse) {
+
+@media screen and (max-width: 1024px) {
   nav {
     box-shadow: 0 -31px 42px 31px rgba(0,0,0,0.6);
     background-color: rgba(0, 0, 0, 0.6);
-
-    & > .logo, .back {
-      margin-top: 6px;
-      margin-bottom: 6px;
-    }
 
     &.white {
       background-color: @orange;
@@ -126,6 +121,20 @@
 
     &.orange {
       background-color: @white;
+    }
+  }
+
+  .frame:not(.choice, .welcome), .frame.choice .frame-overlay{
+    padding: 60px 0;
+  }
+}
+
+@navbar-collapse: 800px;
+@media screen and (max-width: @navbar-collapse) {
+  nav {
+    & > .logo, .back {
+      margin-top: 6px;
+      margin-bottom: 6px;
     }
 
     .menu-container{
