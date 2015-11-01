@@ -233,3 +233,112 @@
     }
   }
 }
+
+@media screen and (max-width: @screen-xs-max) {
+  h2{
+    font-size: @font-size-h2 - 10;
+  }
+  .main .frame.choice a.toIt .overlay .overlay-text, .main .frame.choice a.toPhoto .overlay .overlay-text{
+    font-size: 33px;
+  }
+  .main{
+    .welcome{
+      .hello{
+        top: 30%;
+        margin-top: -20px;
+
+        .i-am{
+          font-size: 40px;
+        }
+
+        .portfolio{
+          font-size: 24px;
+        }
+      }
+
+      .work{
+        bottom: 12%;
+        font-size: 24px;
+      }
+
+      .links .btn{
+        font-size: 20px;
+
+        &.toPhoto{
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .about-me{
+      .text-container{
+        display: block;
+      }
+
+      .image-container, .text{
+        display: block;
+        float: left;
+      }
+
+      .text{
+        margin-bottom: 20px;
+      }
+    }
+
+    .small-container{
+      width: 100%;
+
+      & > div{
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .contact .contact-details{
+      font-size: 25px;
+    }
+  }
+
+  .it{
+    .it-skills .collage-container{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .it {
+    .project-container {
+      .column, .column:first-child {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        padding-right: 0;
+      }
+
+      .column.reversed {
+        direction: ltr;
+      }
+
+      .column:last-child {
+        margin-top: 30px;
+      }
+    }
+
+    .references {
+        .reference {
+          background-position: center bottom;
+          height: 500px;
+
+          .description {
+            height: 250px;
+            top: 0;
+            bottom: auto;
+            left: 0;
+            width: 100%;
+          }
+      }
+    }
+  }
+}
