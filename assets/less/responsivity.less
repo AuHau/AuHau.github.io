@@ -45,11 +45,20 @@
     .menu-container{
       width: 100%;
 
-      ul#menu li{
-        width: 50%;
-        text-align: center;
-        margin-right: 0;
-        margin-top: 10px;
+
+      ul#menu{
+        display: none;
+
+        li{
+          width: 50%;
+          text-align: center;
+          margin-right: 0;
+          margin-top: 10px;
+        }
+      }
+
+      &.nav-collapse ul#menu{
+        display: block;
       }
     }
   }
@@ -80,9 +89,29 @@
       }
     }
   }
+
+  .main .welcome .hello .i-am .adam{
+    display: block;
+  }
 }
 
 @media screen and (max-width: @screen-sm-max) {
+  .wrapper{
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  *[class^="col-"]{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .choice{
+    .frame-align{
+      padding: 0 20px;
+    }
+  }
+
   .main .frame.choice{
 
     .frame-align{
@@ -188,10 +217,16 @@
 
       .image-container, .text{
         display: block;
-        float: left;
+        float: none;
       }
 
-      
+      .image-container{
+        text-align: center;
+
+        img{
+          max-width: 250px;
+        }
+      }
 
       .text{
         margin-bottom: 20px;
@@ -204,6 +239,16 @@
       & > div{
         padding-left: 0;
         padding-right: 0;
+      }
+    }
+
+    .experiences ul{
+      padding-left: 17px;
+    }
+
+    .choice{
+      h2{
+        font-size: 34px;
       }
     }
 
@@ -224,7 +269,7 @@
     .project-container, .project-container.reversed {
       .column, .column:first-child, .column:last-child {
         display: block;
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         padding-right: 0;
       }
