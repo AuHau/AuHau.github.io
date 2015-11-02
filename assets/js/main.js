@@ -112,7 +112,7 @@ $(document).ready(function(){
 
     $('a.next').click(nextHandler);
 
-    responsiveNav(".nav-collapse", {
+    responsiveNav(".menu-container", {
         label: "<i class='fa fa-bars'></i>",
         closeOnNavClick: true
     });
