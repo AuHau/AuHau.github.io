@@ -13,27 +13,23 @@
     <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="build/css/main.css">
 </head>
-<body>
+<body class="it">
 <nav class="white">
     <a href="index.html" class="back">
         <i class="arrow-left"></i>
 
         <div class="logo"></div>
     </a>
-    <ul id="menu">
-        <li data-menuanchor="it-skills"><a href="#it-skills">My IT skills</a></li>
-        <li data-menuanchor="home-myo"><a href="#home-myo">Home Myo</a></li>
-        <li data-menuanchor="picker"><a href="#picker">Select Picker</a></li>
-        <li data-menuanchor="references"><a href="#references">References</a></li>
-    </ul>
-</nav>
-<div class="mobile hidden-lg hidden-md">
-    <div class="frame-align">
-        <div class="ready">Not ready yet!</div>
-        Mobile version is still under development
+    <div class="menu-container nav-collapse">
+        <ul id="menu">
+            <li data-menuanchor="it-skills"><a href="#it-skills">My IT skills</a></li>
+            <li data-menuanchor="home-myo"><a href="#home-myo">Home Myo</a></li>
+            <li data-menuanchor="picker"><a href="#picker">Select Picker</a></li>
+            <li data-menuanchor="references"><a href="#references">References</a></li>
+        </ul>
     </div>
-</div>
-<div class="it page">
+</nav>
+<div class="page">
     <div class="frame it-skills pt orange" data-anchor="it-skills">
         <div class="wrapper">
             <div class="collage-container">
@@ -64,9 +60,6 @@
 
     <div class="frame home-myo white" data-anchor="home-myo">
         <div class="project-container wrapper">
-            <div class="column text-center">
-                <img src="build/images/home-myo.png" alt="Home Myo Cover">
-            </div>
             <div class="column">
                 <h2>Home Myo</h2>
 
@@ -98,12 +91,15 @@
                         <i class="fa fa-github"></i></a>
                 </div>
             </div>
+            <div class="column text-center">
+                <img src="build/images/home-myo.png" alt="Home Myo Cover">
+            </div>
         </div>
         <a href="#" class="next"></a>
     </div>
 
     <div class="frame picker orange" data-anchor="picker">
-        <div class="project-container wrapper">
+        <div class="project-container wrapper reversed">
             <div class="column">
 
                 <h2>Select Picker</h2>
@@ -141,7 +137,8 @@
             <h2>References</h2>
 
             <div class="references-container">
-                <div class="col-md-4 reference mibcon">
+                <div class="col-md-4 reference">
+                    <img src="build/images/mibcon.png" alt="Mibcon website">
                     <div class="description">
                         <a href="http://www.mibcon.cz" target="_blank" class="title">Mibcon a.s.</a>
 
@@ -155,7 +152,8 @@
                         <span class="more">Unfortunately the diamond of my work on this project is not publicly accessible since it is the article creation form in the Admin section.</span>
                     </div>
                 </div>
-                <div class="col-md-4 reference protokolos">
+                <div class="col-md-4 reference">
+                    <img src="build/images/protokolos.png" alt="Protokolos website">
                     <div class="description">
                         <a href="http://www.protokolos.com/en/" target="_blank" class="title">Protokolos</a>
 
@@ -166,10 +164,12 @@
 
                         The major part of my work was on the back-end side, where I collaborated on creating the whole
                         back-end platform from scratch. Moreover I created the front-end part for the mobile
-                        application. The application is still under development.
+                        application.
+                        <span class="more">The application is still under development.</span>
                     </div>
                 </div>
                 <div class="col-md-4 reference trq">
+                    <img src="build/images/trq.png" alt="TimeResq website">
                     <div class="description">
                         <a href="http://www.timeresq.com" target="_blank" class="title">TimeResQ</a>
 
@@ -180,9 +180,12 @@
 
                         I took over front-end development in a later stage of the project. I was also majorly involved
                         in back-end development, where I implemented the Social login feature, amongst other things.
+                        <span class="more">Unfortunately the diamond of my work on this project is not publicly accessible since it is the article creation form in the Admin section.</span>
+
                     </div>
                 </div>
-                <div class="col-md-4 reference nad-rokytkou">
+                <div class="col-md-4 reference">
+                    <img src="build/images/nad-rokytkou.png" alt="Nad Rokytkou website">
                     <div class="description">
                         <a href="http://www.nadrokytkou.cz/en/" target="_blank" class="title">Nad Rokytkou</a>
 
@@ -194,7 +197,8 @@
                         version. The mobile version was done by my colleague.
                     </div>
                 </div>
-                <div class="col-md-4 reference csac">
+                <div class="col-md-4 reference">
+                    <img src="build/images/csac.jpg.png" alt="ČSA Cargo website">
                     <div class="description">
                         <div class="title">ČSA Cargo</div>
 
@@ -206,7 +210,8 @@
                         CMS system.
                     </div>
                 </div>
-                <div class="col-md-4 reference gofis">
+                <div class="col-md-4 reference">
+                    <img src="build/images/gofis.jpg" alt="Gofis website">
                     <div class="description">
                         <div class="title">GOFIS</div>
 
@@ -225,7 +230,6 @@
 
 <script type="text/javascript">
     var framesMenuClasses = ['white', 'orange', 'white', 'orange'];
-    var container = 'it';
 </script>
 <script type="text/javascript" src="build/js/libs.js"></script>
 <script type="text/javascript" src="build/js/main.js"></script>

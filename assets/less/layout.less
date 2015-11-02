@@ -126,7 +126,7 @@ h2{
 }
 
 .wrapper{
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   display: table;
   max-height: 100%;
@@ -147,7 +147,9 @@ nav{
   }
 
   & > .logo, .back{
+    float: left;
     display: inline-block;
+    height: 41px;
     margin-left: 80px;
     margin-top: 13px;
   }
@@ -165,8 +167,11 @@ nav{
     }
   }
 
-  ul{
+  .menu-container{
     float: right;
+  }
+
+  ul#menu{
     text-align: right;
     font-size: 0;
     margin: 0;
@@ -175,6 +180,7 @@ nav{
     li{
       display: inline-block;
       margin-right: 50px;
+      width: auto;
 
       a{
         font-size: 22px;
@@ -211,11 +217,15 @@ nav{
   }
 
   &.white{
+    .nav-toggle{
+      color: @white;
+    }
+
     .logo{
       background-image: url('../images/logo-white.png');
     }
 
-    ul li{
+    ul#menu li{
       a{
         color: @white;
       }
@@ -234,12 +244,15 @@ nav{
 
 
   &.orange{
+    .nav-toggle{
+      color: @orange;
+    }
 
     .arrow-left{
       background-position: -2px -74px ;
     }
 
-    ul li{
+    ul#menu li{
       a{
         color: @orange;
       }
@@ -257,21 +270,44 @@ nav{
   }
 }
 
-.mobile:extend(.frame){
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: @orange;
-  z-index: 100;
+/*! responsive-nav.js 1.0.39 by @viljamis */
 
-  text-align: center;
-
-  .ready{
-    font-size: 30px;
-  }
-
-  .frame-align:extend(.frame .frame-align){}
+.nav-collapse ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  list-style: none;
 }
 
+.nav-collapse li {
+  width: 100%;
+  display: block;
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+
+.nav-toggle {
+  float: right;
+  font-size: 32px;
+  padding: 4px 10px 0;
+  margin-right: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}

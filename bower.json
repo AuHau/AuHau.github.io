@@ -24,7 +24,8 @@
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.5",
     "font-awesome": "~4.4.0",
-    "fullpage.js": "~2.7.4"
+    "fullpage.js": "~2.7.4",
+    "responsive-nav": "~1.0.39"
   },
   "overrides": {
     "font-awesome": {
@@ -36,6 +37,11 @@
         "fonts/fontawesome-webfont.woff2",
         "fonts/fontawesome-webfont.ttf",
         "fonts/fontawesome-webfont.svg"
+      ]
+    },
+    "responsive-nav": {
+      "main": [
+        "responsive-nav.js"
       ]
     }
   }
