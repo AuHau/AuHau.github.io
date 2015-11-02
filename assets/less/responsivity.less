@@ -191,6 +191,8 @@
         float: left;
       }
 
+      
+
       .text{
         margin-bottom: 20px;
       }
@@ -219,8 +221,8 @@
 
 @media screen and (max-width: 740px) {
   .it {
-    .project-container {
-      .column, .column:first-child {
+    .project-container, .project-container.reversed {
+      .column, .column:first-child, .column:last-child {
         display: block;
         width: 80%;
         margin: 0 auto;
@@ -250,7 +252,7 @@
             position: static;
             width: 100%;
             height: auto;
-            padding: 20px 0;
+            padding: 20px 10px;
 
             .more{
               display: inline;
