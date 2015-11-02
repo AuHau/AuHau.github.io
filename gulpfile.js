@@ -12,6 +12,8 @@ var LessPluginCleanCSS = require("less-plugin-clean-css"),
 var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
     autoprefix= new LessPluginAutoPrefix({browsers: ["last 2 versions"]});
 
+var minifyCss = require('gulp-minify-css');
+
 gulp.task('css:production', function() {
     return gulp.src('assets/less/main.less')
         .pipe(plugins.less({
@@ -21,7 +23,7 @@ gulp.task('css:production', function() {
         .pipe(plugins.ignore.include('*.css'))
         .on('error', plugins.notify.onError("Error: <%= error.file %> <%= error.message %>"))
         .pipe(plugins.concat('main.css'))
-        .pipe(plugins.minifyCss())
+        .pipe(minifyCss())
         .pipe(gulp.dest('build/css/'))
         .pipe(plugins.notify('CSS:production build finished'));
 });

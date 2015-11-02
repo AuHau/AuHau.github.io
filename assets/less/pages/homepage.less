@@ -83,17 +83,18 @@
     img.me{
       width: 100%;
       border-radius: 50%;
-      display: table-cell;
-      vertical-align: middle;
     }
 
     .text-container{
       width: 100%;
       overflow: hidden;
+      display: table;
     }
 
-    .image-container{
-      display: table;
+    .image-container, .text{
+      display: table-cell;
+      vertical-align: middle;
+      float: none;
     }
 
     .quote{
@@ -129,7 +130,7 @@
     }
   }
 
-  .choice{
+  .frame.choice{
     background: url('../images/darth_vader.jpg') center center no-repeat no-repeat;
     background-size: cover;
 
@@ -152,6 +153,10 @@
       .choice-image{
         display: inline-block;
         position: relative;
+
+        img{
+          max-width: 100%;
+        }
       }
 
       .overlay{

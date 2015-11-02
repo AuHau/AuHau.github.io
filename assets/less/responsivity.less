@@ -1,9 +1,290 @@
-@media all and (min-width: 1500px){
-  .wrapper{
+@media screen and (max-width: 1050px) {
+  nav {
+    & > .logo, .back {
+      margin-left: 10px;
+    }
+
+    ul#menu li {
+      margin-right: 30px;
+    }
+  }
+
+  .main nav > .logo {
+    margin-left: 35px;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  nav {
+    box-shadow: 0 -31px 42px 31px rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
+
+    &.white {
+      background-color: @orange;
+    }
+
+    &.orange {
+      background-color: @white;
+    }
+  }
+
+  .frame:not(.choice):not(.welcome), .frame.choice .frame-overlay{
+    padding: 60px 0;
+  }
+}
+
+@navbar-collapse: 800px;
+@media screen and (max-width: @navbar-collapse) {
+  nav {
+    & > .logo, .back {
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+
+    .menu-container{
+      width: 100%;
+
+      ul#menu li{
+        width: 50%;
+        text-align: center;
+        margin-right: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .frame:not(.choice, .welcome), .frame.choice .frame-overlay{
+    padding: 60px 0;
+  }
+}
+
+@media screen and (min-width: @navbar-collapse) {
+  .js .nav-collapse {
+    position: relative;
+  }
+  .js .nav-collapse.closed {
+    max-height: none;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  nav {
+    .menu-container{
+      ul#menu li{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: @screen-sm-max) {
+  .main .frame.choice{
+
+    .frame-align{
+      display: block;
+    }
+
+    a.toPhoto, a.toIt{
+      &.toPhoto {
+        padding-left: 0;
+        margin-bottom: 30px;
+      }
+
+      &.toIt {
+        padding-right: 0;
+      }
+      .arrow-left-big, .arrow-right-big{
+        display: none;
+      }
+
+      .overlay{
+        display: block;
+      }
+    }
+  }
+
+  .main .experiences{
+    .small-container{
+      text-align: center;
+    }
+
+    ul{
+      display: inline-block;
+
+      ul{
+        display: block;
+      }
+    }
+
+    li{
+      text-align: left;
+    }
+  }
+
+  .it .references{
+    .reference{
+      text-align: left;
+      font-size: 18px;
+
+      img{
+        max-width: 50%;
+      }
+
+      .description{
+        bottom: 0;
+        left: 50%;
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: @screen-xs-max) {
+  h2{
+    font-size: @font-size-h2 - 10;
+  }
+  .main .frame.choice a.toIt .overlay .overlay-text, .main .frame.choice a.toPhoto .overlay .overlay-text{
+    font-size: 33px;
+  }
+  .main{
+    .welcome{
+      .hello{
+        top: 30%;
+        margin-top: -20px;
+
+        .i-am{
+          font-size: 40px;
+        }
+
+        .portfolio{
+          font-size: 24px;
+        }
+      }
+
+      .work{
+        bottom: 12%;
+        font-size: 24px;
+      }
+
+      .links .btn{
+        font-size: 20px;
+
+        &.toPhoto{
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .about-me{
+      .text-container{
+        display: block;
+      }
+
+      .image-container, .text{
+        display: block;
+        float: left;
+      }
+
+      
+
+      .text{
+        margin-bottom: 20px;
+      }
+    }
+
+    .small-container{
+      width: 100%;
+
+      & > div{
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .contact .contact-details{
+      font-size: 25px;
+    }
+  }
+
+  .it{
+    .it-skills .collage-container{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .it {
+    .project-container, .project-container.reversed {
+      .column, .column:first-child, .column:last-child {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        padding-right: 0;
+      }
+
+      .column.reversed {
+        direction: ltr;
+      }
+
+      .column:last-child {
+        margin-top: 30px;
+      }
+    }
+
+    .references {
+        .reference {
+          text-align: center;
+          height: auto;
+
+          img{
+            max-width: 100%;
+            max-height: 250px;
+          }
+
+          .description {
+            position: static;
+            width: 100%;
+            height: auto;
+            padding: 20px 10px;
+
+            .more{
+              display: inline;
+            }
+          }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: @font-size-h2 + 10;
+  }
+
+
+  .it .reference{
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .wrapper {
     width: 80%;
   }
 
-  h2{
+  h2 {
     margin-bottom: 30px;
   }
 
@@ -14,32 +295,32 @@
       }
     }
 
-    .experiences{
-      h3{
+    .experiences {
+      h3 {
         text-align: left;
       }
     }
 
-    .about-me{
-      .img-container{
+    .about-me {
+      .img-container {
         width: 25%;
         margin-right: 5%;
       }
 
-      .text{
+      .text {
         width: 70%;
       }
 
-      .quote{
+      .quote {
         display: block;
       }
     }
 
-  .choice{
-    h2{
-      margin-bottom: 100px;
+    .choice {
+      h2 {
+        margin-bottom: 100px;
+      }
     }
-  }
 
     .contact {
       .contact-details {
@@ -52,30 +333,34 @@
     }
   }
 
-  .it{
-    .project-container h2{
+  .it {
+    .project-container h2 {
       margin-bottom: 40px;
     }
 
-    .reference .more{
+    .reference .more {
       display: inline;
     }
   }
+
+  .it .reference{
+    font-size: 18px;
+  }
 }
 
-@media all and (min-width: 1750px) {
-  .wrapper{
+@media screen and (min-width: 1750px) {
+  .wrapper {
     width: 75%;
   }
 
-  h2{
+  h2 {
     margin-bottom: 60px;
   }
 
   .main {
 
-    .choice{
-      h2{
+    .choice {
+      h2 {
         margin-bottom: 150px;
       }
     }

@@ -13,23 +13,19 @@
     <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="build/css/main.css">
 </head>
-<body>
+<body class="main">
 <nav>
     <div class="logo"></div>
-    <ul id="menu">
-        <li data-menuanchor="about-me"><a href="#about-me">About me</a></li>
-        <li data-menuanchor="experiences"><a href="#experiences">My experiences</a></li>
-        <li data-menuanchor="choice" class="choice"><a href="#choice">Choice</a></li>
-        <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-<div class="mobile hidden-lg hidden-md">
-    <div class="frame-align">
-        <div class="ready">Not ready yet!</div>
-        Mobile version is still under development
+    <div class="menu-container nav-collapse">
+        <ul id="menu">
+            <li data-menuanchor="about-me"><a href="#about-me">About me</a></li>
+            <li data-menuanchor="experiences"><a href="#experiences">My experiences</a></li>
+            <li data-menuanchor="choice" class="choice"><a href="#choice">Choice</a></li>
+            <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
+        </ul>
     </div>
-</div>
-<div class="main page">
+</nav>
+<div class="page">
     <div class="frame welcome" data-anchor="welcome">
         <div class="welcome-container">
             <div class="hello">
@@ -53,15 +49,15 @@
             <h2>About me</h2>
 
             <div class="text-container">
-                <div class="col-md-4 img-container">
-                    <img src="build/images/person.jpg" alt="Photo of Adam Uhlir" class="me">
-                </div>
-                <div class="col-md-8 text">
+                <div class="col-sm-8 text">
                     My name is Adam Uhlir and I am a 24-year-old guy who loves to be proactive in his life. I am originally from Prague, but now I live in Helsinki and soon I will move to Stockholm. And after that? Who knows...
                     <br><br>
                     I am interested in a variety of things starting with IT world, browsing through photography and timelapsing, daydreaming while listening to music, getting excited while dancing, feeling the moment while practicing sports (frisbee and squash to name a few) and ending at preparing and launching fireworks. Moreover I love to travel, discover new cultures, meet interesting people and above all, I have a passion for nature and hiking.
                     <br><br>
                     My motto is live life to the fullest, by seeking and accepting all challenges laid in front of me and being happy by embracing all the small things that come and go in my life.
+                </div>
+                <div class="col-sm-4 image-container">
+                    <img src="build/images/person.jpg" alt="Photo of Adam Uhlir" class="me">
                 </div>
             </div>
             <div class="quote">
@@ -124,7 +120,7 @@
         </div>
         <a href="#" class="next"></a>
     </div>
-    <div class="frame choice" data-anchor="choice">
+    <div class="frame choice" data-anchor="choice" data-menuclass="orange">
         <div class="frame-overlay">
             <div class="frame-align">
                 <h2>Which of my <span class="dark">dark</span> sides you want to discover?</h2>
@@ -166,7 +162,6 @@
         <div class="contact-details">
             Adam Uhlíř<br>
             <a href="mailto:hello@adam-uhlir.me">hello@adam-uhlir.me</a><br>
-            +420 607 963 319
         </div>
         <div class="networks">
             <a href="https://cz.linkedin.com/pub/adam-uhlir/70/6b3/33a" target="_blank" class="networks-linkedin">LinkedIn</a>
