@@ -14,6 +14,18 @@
 
     &.reversed{
       direction: rtl;
+
+      .column{
+        &:first-child{
+          width: 50%;
+          padding-right: 0;
+        }
+
+        &:last-child{
+          width: calc(~"50% - 30px");
+          padding-right: 30px;
+        }
+      }
     }
 
     img{
@@ -77,31 +89,14 @@
     margin-bottom: 10px;
     position: relative;
     overflow: hidden;
-    background: top center no-repeat no-repeat;
-    background-size: contain;
-    
-    &.mibcon{
-      background-image: url('../images/mibcon.png');
-    }
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    font-size: 14px;
 
-    &.protokolos{
-      background-image: url('../images/protokolos.png');
-    }
-
-    &.trq{
-      background-image: url('../images/trq.png');
-    }
-
-    &.nad-rokytkou{
-      background-image: url('../images/nad-rokytkou.png');
-    }
-
-    &.csac{
-      background-image: url('../images/csac.jpg.png');
-    }
-
-    &.gofis{
-      background-image: url('../images/gofis.jpg');
+    img{
+      max-width: 100%;
+      max-height: 100%;
     }
 
     .description{
@@ -111,6 +106,7 @@
       left: 0;
       bottom: 0;
       transition: bottom ease 400ms;
+      padding: 0 10px;
 
       background-color: rgba(0, 0, 0, 0.7);
       color: @white;
@@ -153,10 +149,8 @@
       }
     }
 
-    &.mibcon, &.protokolos, &.trq, &.gofis, &.csac, &.nad-rokytkou{
-      .description{
-        bottom: -100%;
-      }
+    img + .description{
+      bottom: -100%;
     }
 
     &:hover .description{
