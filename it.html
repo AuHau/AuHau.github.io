@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="build/css/main.css">
 </head>
 <body class="it">
-<nav class="white">
+<nav class="orange">
     <a href="index.html" class="back">
         <i class="arrow-left"></i>
 
@@ -23,6 +23,7 @@
     <div class="menu-container">
         <ul id="menu">
             <li data-menuanchor="it-skills"><a href="#it-skills">My IT skills</a></li>
+            <li data-menuanchor="icalian"><a href="#icalian">iCalian</a></li>
             <li data-menuanchor="home-myo"><a href="#home-myo">Home Myo</a></li>
             <li data-menuanchor="picker"><a href="#picker">Select Picker</a></li>
             <li data-menuanchor="references"><a href="#references">References</a></li>
@@ -30,7 +31,7 @@
     </div>
 </nav>
 <div class="page">
-    <div class="frame it-skills pt orange" data-anchor="it-skills">
+    <div class="frame it-skills pt white" data-anchor="it-skills">
         <div class="wrapper">
             <div class="collage-container">
                 <img src="build/images/kolaz.png" alt="Collage of Logos of technologies">
@@ -47,9 +48,8 @@
                 In the front-end part, I am fairly familiar with standard technologies such as HTML5, CSS3 and
                 JavaScript. I use tools such as gulp, bower, npm, jQuery, SASS/LESS, Bootstrap and more.<br>
                 Despite my experience in front-end development, I prefer to work on back-end development. I was mainly
-                involved in development with PHP, PostgreSQL, Doctrine ORM, Symfony 2 and Composer. Recently I also had
-                the possibility to develop with Node.js and MongoDB, although I would say that my experience with these
-                technologies are rather basic.<br>
+                involved in development with PHP, PostgreSQL, Doctrine ORM, Symfony 2 and Composer. Recently I started
+                one small project to learn how to develop with Node.js and MongoDB, React, Docker and Amazon AWS<br>
                 Aside from web development, I also have experience with Git, Android development, Java language and
                 Matlab. Additionally, I have a basic understanding of machine learning, artificial intelligence,
                 designing algorithms, cloud architecture and distributed computation.
@@ -58,8 +58,48 @@
         <a href="#" class="next"></a>
     </div>
 
-    <div class="frame home-myo white" data-anchor="home-myo">
+    <div class="frame icalian orange" data-anchor="icalian">
         <div class="project-container wrapper">
+            <div class="column">
+                <h2>iCalian</h2>
+
+                <div class="tags">
+                    <div>iCal</div>
+                    <div>Node.js</div>
+                    <div>MongoDB</div>
+                    <div>React</div>
+                    <div>Docker</div>
+                    <div>Amazon AWS</div>
+                </div>
+
+                <div class="text">
+                    iCalian is small service which let you modify static iCal feeds.
+                    You can think of it as proxy between your calendar service (for example Google
+                    Calendar) and generated iCal feed which you can't modify (for example
+                    feed of your Facebook Events). Current main feature is filtering events which you don't want to have in your Calendar.
+                    In future you will be able to filter recurrent events or filter events based on conditions,
+                    modify details of events manually or with regular expressions.<br>
+
+                    This project serve me as learning opportunity, since I am using (or plan to use),
+                    latest technologies such as Node.js, MongoDB, React, Docker and I plan to deploy
+                    the service to Amazon AWS.
+
+                </div>
+
+                <div class="text-center">
+                    <a href="https://github.com/AuHau/icalian" class="check-github btn" target="_blank">Check on GitHub
+                        <i class="fa fa-github"></i></a>
+                </div>
+            </div>
+            <div class="column text-center">
+                <img src="build/images/icalian.png" alt="iCalian Cover">
+            </div>
+        </div>
+        <a href="#" class="next"></a>
+    </div>
+
+    <div class="frame home-myo white" data-anchor="home-myo">
+        <div class="project-container wrapper reversed">
             <div class="column">
                 <h2>Home Myo</h2>
 
@@ -99,7 +139,7 @@
     </div>
 
     <div class="frame picker orange" data-anchor="picker">
-        <div class="project-container wrapper reversed">
+        <div class="project-container wrapper">
             <div class="column">
 
                 <h2>Select Picker</h2>
@@ -198,7 +238,7 @@
                 <div class="col-md-4 reference">
                     <img src="build/images/csac.jpg.png" alt="ČSA Cargo website">
                     <div class="description">
-                        <div class="title">ČSA Cargo</div>
+                        <a href="http://www.csacargo.cz/en" target="_blank" class="title">ČSA Cargo</a>
 
                         <div class="work-done">
                             <div>Frontend</div>
@@ -227,7 +267,7 @@
 </div>
 
 <script type="text/javascript">
-    var framesMenuClasses = ['white', 'orange', 'white', 'orange'];
+    var framesMenuClasses = ['orange', 'white', 'orange', 'white', 'orange'];
 </script>
 <script type="text/javascript" src="build/js/libs.js"></script>
 <script type="text/javascript" src="build/js/main.js"></script>
