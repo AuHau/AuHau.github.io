@@ -99,6 +99,8 @@ var nextHandler = function (e) {
 };
 
 $(document).ready(function(){
+    $("#year").html(new Date().getFullYear());
+
     $('.page').fullpage({
         sectionSelector: '.frame',
         menu: '#menu',

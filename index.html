@@ -50,7 +50,7 @@
 
             <div class="text-container">
                 <div class="col-sm-8 text">
-                    My name is Adam Uhlir and I am a 24-year-old guy who loves to be proactive in his life. I am originally from Prague, but now I live in Helsinki and soon I will move to Stockholm. And after that? Who knows...
+                    My name is Adam Uhlir and I am a <span id="age">25</span>-year-old guy who loves to be proactive in his life. I am originally from Prague, but now I live in Helsinki and soon I will move to Stockholm. And after that? Who knows...
                     <br><br>
                     I am interested in a variety of things starting with IT world, browsing through photography and timelapsing, daydreaming while listening to music, getting excited while dancing, feeling the moment while practicing sports (frisbee and squash to name a few) and ending at preparing and launching fireworks. Moreover I love to travel, discover new cultures, meet interesting people and above all, I have a passion for nature and hiking.
                     <br><br>
@@ -79,9 +79,9 @@
                     <h3>Work experience</h3>
                     <ul>
                         <li><a href="http://aalto.fi/en/">Aalto University</a> - Course Assistant<br>
-                            (September 2015 - December 2015, parttime)
+                            (September 2015 - December 2015, part time)
                         </li>
-                        <li><a href="http://designeo.cz/en/">Designeo Creative s.r.o</a> - Fullstack developer<br>
+                        <li><a href="http://designeo.cz/en/">Designeo Creative s.r.o</a> - Fullstack web developer<br>
                             (October 2014 - August 2015, part time/full time)
                         </li>
                         <li><a href="http://www.adcstudio.cz">ADC Studio s.r.o</a> - Web developer<br>
@@ -172,7 +172,7 @@
         </div>
         <div class="footer">
             Photos of me by Kateřina Bodorová<br>
-            &copy; 2015 Adam Uhlíř
+            &copy; <span id="year">2015</span> Adam Uhlíř
         </div>
     </div>
 </div>
@@ -184,6 +184,13 @@
 <script type="text/javascript" src="build/js/libs.js"></script>
 <script type="text/javascript" src="build/js/main.js"></script>
 <script>
+    // My age
+    var birthday = new Date(1991, 7, 5);
+    var timeDiff = Math.abs(Date.now() - birthday.getTime());
+    var diffYears = Math.floor(timeDiff / (1000 * 3600 * 24 * 365));
+    $("#age").html(diffYears);
+
+    // Google Analytics
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
