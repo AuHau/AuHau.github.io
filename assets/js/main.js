@@ -8,11 +8,12 @@ var classes = ['orange', 'white'];
  * @param direction
  */
 var menuHandler = function (index, nextIndex, direction) {
+    navHandler(nextIndex);
+
     if($(window).width() < responsiveWidth){
         return;
     }
 
-    var nav = $('nav');
     nextIndex--;
 
     var duration;
@@ -22,6 +23,7 @@ var menuHandler = function (index, nextIndex, direction) {
         duration = 540;
     }
 
+    var nav = $('nav');
     if(!framesMenuClasses[nextIndex]){
         setTimeout(function () {
             nav.removeClass('orange').removeClass('white');
@@ -30,6 +32,20 @@ var menuHandler = function (index, nextIndex, direction) {
         setTimeout(function () {
             nav.removeClass('orange').removeClass('white').addClass(framesMenuClasses[nextIndex]);
         }, duration);
+    }
+};
+
+var navHandler = function(index){
+    index--;
+    var anchorName = $('.frame').eq(index).data('anchor');
+    var nav = $('#menu');
+
+    nav.find('.active').removeClass('active');
+
+    if (anchorName.lastIndexOf('projects') > -1) {
+        $('#projects').addClass('active');
+    }else{
+        nav.find('[data-menuanchor="' + anchorName + '"]').addClass('active');
     }
 };
 
@@ -101,9 +117,10 @@ var nextHandler = function (e) {
 $(document).ready(function(){
     $("#year").html(new Date().getFullYear());
 
+    navHandler(1);
+
     $('.page').fullpage({
         sectionSelector: '.frame',
-        menu: '#menu',
         recordHistory: false,
         scrollBar: true,
         onLeave: menuHandler,

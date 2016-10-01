@@ -24,7 +24,7 @@
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.5",
     "font-awesome": "~4.4.0",
-    "fullpage.js": "~2.7.4",
+    "fullpage.js": "^2.8.6",
     "responsive-nav": "~1.0.39"
   },
   "overrides": {
