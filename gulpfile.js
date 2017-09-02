@@ -1,8 +1,19 @@
 'use strict';
 
+////////////////////////////////////////////
+// CONFIGURATIONS
+
+var ASSETS_PATH = 'assets/';
+var BUILD_PATH = 'build/';
+var CSS_FILE_NAME = 'main.css';
+var JS_FILE_NAME = 'main.js';
+var JS_LIB_FILE_NAME = 'lib.js';
+
+///////////////////////////////////////////
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var plugins = gulpLoadPlugins();
+var argv = require('yargs').argv;
 
 var mainBowerFiles = require('main-bower-files');
 
@@ -14,79 +25,64 @@ var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
 
 var minifyCss = require('gulp-minify-css');
 
-gulp.task('css:production', function() {
-    return gulp.src('assets/less/main.less')
-        .pipe(plugins.less({
-            plugins: [autoprefix, cleancss]
-        }))
-        .pipe(plugins.addSrc.prepend(mainBowerFiles()))
-        .pipe(plugins.ignore.include('*.css'))
-        .on('error', plugins.notify.onError("Error: <%= error.file %> <%= error.message %>"))
-        .pipe(plugins.concat('main.css'))
-        .pipe(minifyCss())
-        .pipe(gulp.dest('build/css/'))
-        .pipe(plugins.notify('CSS:production build finished'));
-});
-
 gulp.task('css', function() {
-    return gulp.src('assets/less/main.less')
-        .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.less({
-            plugins: [autoprefix, cleancss]
-        }))
-        .pipe(plugins.sourcemaps.write())
-        .pipe(plugins.addSrc.prepend(mainBowerFiles()))
-        .pipe(plugins.ignore.include('*.css'))
+    var less = plugins.less({
+        plugins: [autoprefix, cleancss]
+    });
+    less.on('error', function (e) {
+        console.log(e.message);
+        less.end();
+    });
+
+    return gulp.src(ASSETS_PATH + 'less/main.less')
+        .pipe(plugins.if(!argv.production, plugins.sourcemaps.init()))
+        .pipe(less)
+        .pipe(plugins.if(!argv.production, plugins.sourcemaps.write()))
+        .pipe(plugins.addSrc.prepend(mainBowerFiles('**/*.css')))
         .on('error', plugins.notify.onError("Error: <%= error.file %> <%= error.message %>"))
-        .pipe(plugins.concat('main.css'))
-        .pipe(gulp.dest('build/css/'))
+        .pipe(plugins.concat(CSS_FILE_NAME))
+        .pipe(plugins.if(argv.production, minifyCss()))
+        .pipe(gulp.dest(BUILD_PATH))
         .pipe(plugins.notify('CSS build finished'));
 });
 
-gulp.task('js:production', function() {
-    return gulp.src(['assets/js/**/*.js'])
-        .pipe(plugins.concat('main.js'))
-        .pipe(plugins.uglify())
-        .pipe(gulp.dest('build/js/'))
-        .pipe(plugins.notify('JS build finished'));
-});
 
 gulp.task('js', function() {
-    return gulp.src(['assets/js/*.js'])
-        .pipe(plugins.concat('main.js'))
-        .pipe(gulp.dest('build/js/'))
+    return gulp.src([ASSETS_PATH + 'js/**/*.js'])
+        .pipe(plugins.if(!argv.production, plugins.sourcemaps.init()))
+        .pipe(plugins.concat(JS_FILE_NAME))
+        .pipe(plugins.if(!argv.production, plugins.sourcemaps.write()))
+        .pipe(plugins.if(argv.production, plugins.uglify()))
+        .pipe(gulp.dest(BUILD_PATH))
         .pipe(plugins.notify('JS build finished'));
-});
-
-
-gulp.task('images', function() {
-    return gulp.src(['assets/images/**/*'])
-        .pipe(gulp.dest('build/images/'));
 });
 
 gulp.task('js:libs', function() {
-    return gulp.src(mainBowerFiles())
-        .pipe(plugins.ignore.include('*.js'))
+    return gulp.src(mainBowerFiles('**/*.js'))
         .on('error', plugins.notify.onError("Error: <%= error.file %> <%= error.message %>"))
-        .pipe(plugins.concat('libs.js'))
-        .pipe(plugins.uglify())
-        .pipe(gulp.dest('build/js/'));
+        .pipe(plugins.concat(JS_LIB_FILE_NAME))
+        .pipe(plugins.if(argv.production, plugins.uglify()))
+        .pipe(gulp.dest(BUILD_PATH));
+});
+
+gulp.task('images', function() {
+    return gulp.src([ASSETS_PATH + 'images/**/*'])
+        .pipe(gulp.dest(BUILD_PATH + 'images/'));
 });
 
 gulp.task('fonts', function() {
-    var fonts = ['ttf', 'woff', 'eot', 'svg'].join(',');
+    var fonts = ['ttf', 'woff', 'woff2', 'eot', 'svg'].join(',');
 
-    return gulp.src(mainBowerFiles())
-        .pipe(plugins.ignore.include('**/*.{'+ fonts +'}'))
-        .pipe(plugins.addSrc('assets/fonts/**/*.{'+ fonts +'}'))
+    return gulp.src(mainBowerFiles('**/*.{'+ fonts +'}'))
+        .pipe(plugins.addSrc(ASSETS_PATH + 'fonts/**/*.{'+ fonts +'}'))
         .pipe(plugins.flatten())
-        .pipe(gulp.dest('build/fonts/'))
+        .pipe(gulp.dest(BUILD_PATH + 'fonts/'))
 });
 
 gulp.task('build', ['js', 'js:libs', 'css', 'fonts', 'images']);
-gulp.task('build:production', ['js:production', 'js:libs', 'css:production', 'fonts', 'images']);
 
 gulp.task('default', ['build'], function() {
-    gulp.watch('assets/less/**', ['css']);
-    gulp.watch('assets/js/**', ['js']);
+    gulp.watch(ASSETS_PATH + 'less/**', ['css']);
+    gulp.watch(ASSETS_PATH + 'js/**', ['js']);
+    gulp.watch(ASSETS_PATH + 'images/**', ['images']);
 });
