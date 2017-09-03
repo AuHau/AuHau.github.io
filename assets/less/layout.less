@@ -143,7 +143,7 @@ nav{
     display: inline-block;
     width: 69px;
     height: 41px;
-    background: url('images/logo.png') no-repeat no-repeat;
+    background: url('images/logo_sprite.png') no-repeat no-repeat left center;
   }
 
   & > .logo, .back{
@@ -218,21 +218,21 @@ nav{
 
   &.white{
     .nav-toggle{
-      color: @white;
+      color: @orange;
     }
 
     .logo{
-      background-image: url('images/logo-white.png');
+      background-position: left center;
     }
 
     ul#menu li{
       a{
-        color: @white;
+        color: @orange;
       }
 
       &.active a, a:hover, a:focus {
-        color: @white;
-        border-top-color: @white;
+        color: @orange;
+        border-top-color: @orange;
       }
 
       &.choice a, &.active.choice a{
@@ -245,21 +245,25 @@ nav{
 
   &.orange{
     .nav-toggle{
-      color: @orange;
+      color: @white;
     }
 
     .arrow-left{
       background-position: -2px -74px ;
     }
 
+    .logo{
+      background-position: right center;
+    }
+
     ul#menu li{
       a{
-        color: @orange;
+        color: @white;
       }
 
       &.active a, a:hover, a:focus {
-        color: @orange;
-        border-top-color: @orange;
+        color: @white;
+        border-top-color: @white;
       }
 
       &.choice a, &.active.choice a{

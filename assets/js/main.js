@@ -1,39 +1,5 @@
-var responsiveWidth = 1024;
-var classes = ['orange', 'white'];
-
-/**
- * Menu color changer for Fullpage.js
- * @param index
- * @param nextIndex
- * @param direction
- */
-var menuHandler = function (index, nextIndex, direction) {
-    navHandler(nextIndex);
-
-    if($(window).width() < responsiveWidth){
-        return;
-    }
-
-    nextIndex--;
-
-    var duration;
-    if(direction == 'up'){
-        duration = 180;
-    }else{
-        duration = 540;
-    }
-
-    var nav = $('nav');
-    if(!framesMenuClasses[nextIndex]){
-        setTimeout(function () {
-            nav.removeClass('orange').removeClass('white');
-        }, duration);
-    }else if(!nav.hasClass(framesMenuClasses[nextIndex])){
-        setTimeout(function () {
-            nav.removeClass('orange').removeClass('white').addClass(framesMenuClasses[nextIndex]);
-        }, duration);
-    }
-};
+var RESPONSIVE_WIDTH = 1024;
+var CLASSES = ['orange', 'white'];
 
 var navHandler = function(index){
     index--;
@@ -53,7 +19,7 @@ var getClassFromFrame = function ($frame) {
     var frameClasses = $frame.attr('class').split(/\s+/);
 
     for (var i = 0; i < frameClasses.length; i++) {
-        if ($.inArray(frameClasses[i], classes) > -1) {
+        if ($.inArray(frameClasses[i], CLASSES) > -1) {
             return frameClasses[i];
         }
     }
@@ -64,22 +30,20 @@ var getClassFromFrame = function ($frame) {
 };
 
 /**
- * Remove all classes from $elem defined in array "classes"
+ * Remove all CLASSES from $elem defined in array "CLASSES"
  * @param $elem
  */
 var removeClasses = function ($elem) {
-    for (var i = 0; i < classes.length; i++) {
-        $elem.removeClass(classes[i]);
+    for (var i = 0; i < CLASSES.length; i++) {
+        $elem.removeClass(CLASSES[i]);
     }
 };
 
 /**
  * Menu color changer for normal scrolling
  */
-var menuColorSwitcher = function () {
-    if($(window).width() >= responsiveWidth){
-        return;
-    }
+var menuColorSwitcher = function (e) {
+    e.preventDefault();
 
     var frames = $(".frame");
     var $nav = $('nav');
@@ -123,8 +87,7 @@ $(document).ready(function(){
         sectionSelector: '.frame',
         recordHistory: false,
         scrollBar: true,
-        onLeave: menuHandler,
-        responsiveWidth: responsiveWidth
+        responsiveWidth: RESPONSIVE_WIDTH
     });
 
     $(window).on('resize scroll', menuColorSwitcher);
