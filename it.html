@@ -23,7 +23,7 @@
     <div class="menu-container">
         <ul id="menu">
             <li data-menuanchor="it-skills"><a href="#it-skills">My IT skills</a></li>
-            <li id="projects" data-menuanchor="projects-icalian"><a href="#projects-icalian">My projects</a></li>
+            <li id="projects" data-menuanchor="projects-dagui"><a href="#projects-dagui">My projects</a></li>
             <li data-menuanchor="references"><a href="#references">References</a></li>
         </ul>
     </div>
@@ -45,52 +45,77 @@
                 but I have also deep knowledge of standard technologies such as HTML5, CSS3, jQuery, SASS/LESS, Bootstrap and more.<br>
                 Despite my experience in front-end development, I prefer to work on back-end development. In past, I have been working
                 with several technologies such as PHP, Symfony2, PostgreSQL, Doctrine, NodeJS and MongoDB. Currently, I am very
-                interested in Python environment, particularly Django framework.<br><br>
+                interested in Python environment, particularly the Django framework.<br><br>
 
                 Aside from web development, I also have experience with Git, Android development and Java language.
             </div>
         </div>
-        <a href="#" class="next"></a>
+        <a href="#" class="nextFrame"></a>
     </div>
 
-    <div class="frame icalian orange" data-anchor="projects-icalian">
+    <div class="frame dagui orange" data-anchor="projects-dagui">
         <div class="project-container wrapper">
             <div class="column">
-                <h2>iCalian</h2>
+                <h2>daGui</h2>
 
                 <div class="tags">
-                    <div>iCal</div>
                     <div>Node.js</div>
-                    <div>MongoDB</div>
-                    <div>Angular 2.0</div>
-                    <div>Docker</div>
+                    <div>React</div>
+                    <div>Electron</div>
+                    <div>Apache Spark</div>
                 </div>
 
                 <div class="text">
-                    iCalian is an integration service which enables you to import your static iCal feeds into major
-                    Calendar providers (currently Google Calendar).<br>
+                    daGui is an application which enables you to create Big Data programs for frameworks that utilizes
+                    Directed Acyclic Graph (DAG) for execution, by building the graph in user friendly way.<br>
+                    It has system of adaptors, so new frameworks can be plugged-in. Currently it supports Apache Spark.
+                    <br><br>
 
-                    Such an imported feed is then treated as regular calendar, where you can modify the feed's events,
-                    the history of the feed is preserved and there are special integrations to some services, which enables
-                    you to set custom policies for the calendars (for example Facebook Events).<br>
-
-                    This project serves me as learning opportunity and is currently in "Work In Progress" state.
-
+                    daGui was developed as part of my Master thesis.
                 </div>
 
                 <div class="text-center">
-                    <a href="https://github.com/AuHau/icalian" class="check-github btn" target="_blank">
+                    <a href="https://github.com/AuHau/daGui" class="check-github btn" target="_blank">
                         Check on GitHub
                         <i class="fa fa-github"></i>
                     </a>
                 </div>
             </div>
             <div class="column text-center">
-                <img src="build/images/icalian.png" alt="iCalian Cover">
+                <div id="daGui-imgs" class="carousel slide" data-ride="carousel" data-interval="4000">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="item-wrapper">
+                                <img src="build/images/daGui-logo.png" alt="daGui logo">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-wrapper">
+                                <img src="build/images/daGui-design.png" alt="daGui design">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-wrapper">
+                                <img src="build/images/daGui_exec.png" alt="daGui design">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left control" href="#daGui-imgs" role="button" data-slide="prev">
+                        <span class="arrow-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right control" href="#daGui-imgs" role="button" data-slide="next">
+                        <span class="arrow-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
         </div>
-        <a href="#" class="next"></a>
+        <a href="#" class="nextFrame"></a>
     </div>
+
 
     <div class="frame markdown white" data-anchor="projects-markdown">
         <div class="project-container wrapper reversed">
@@ -126,11 +151,50 @@
                 <img src="build/images/md-notes.png" alt="Markdown Notes Cover">
             </div>
         </div>
-        <a href="#" class="next"></a>
+        <a href="#" class="nextFrame"></a>
     </div>
 
-    <div class="frame home-myo orange" data-anchor="projects-home-myo">
-        <div class="project-container wrapper">
+    <div class="frame icalian orange" data-anchor="projects-icalian">
+        <div class="project-container wrapper ">
+            <div class="column">
+                <h2>iCalian</h2>
+
+                <div class="tags">
+                    <div>iCal</div>
+                    <div>Node.js</div>
+                    <div>MongoDB</div>
+                    <div>Angular 2.0</div>
+                    <div>Docker</div>
+                </div>
+
+                <div class="text">
+                    iCalian is an integration service which enables you to import your static iCal feeds into major
+                    Calendar providers (currently Google Calendar).<br>
+
+                    Such an imported feed is then treated as regular calendar, where you can modify the feed's events,
+                    the history of the feed is preserved and there are special integrations to some services, which enables
+                    you to set custom policies for the calendars (for example Facebook Events).<br>
+
+                    This project serves me as learning opportunity and is currently in "Work In Progress" state.
+
+                </div>
+
+                <div class="text-center">
+                    <a href="https://github.com/AuHau/icalian" class="check-github btn" target="_blank">
+                        Check on GitHub
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="column text-center">
+                <img src="build/images/icalian.png" alt="iCalian Cover">
+            </div>
+        </div>
+        <a href="#" class="nextFrame"></a>
+    </div>
+
+    <div class="frame home-myo white" data-anchor="projects-home-myo">
+        <div class="project-container wrapper reversed">
             <div class="column">
                 <h2>Home Myo</h2>
 
@@ -162,11 +226,11 @@
                 <img src="build/images/home-myo.png" alt="Home Myo Cover">
             </div>
         </div>
-        <a href="#" class="next"></a>
+        <a href="#" class="nextFrame"></a>
     </div>
 
-    <div class="frame picker white" data-anchor="projects-picker">
-        <div class="project-container wrapper reversed">
+    <div class="frame picker orange" data-anchor="projects-picker">
+        <div class="project-container wrapper ">
             <div class="column">
 
                 <h2>Select Picker</h2>
@@ -196,7 +260,7 @@
                 <img src="build/images/picker.png" alt="Selection Picker">
             </div>
         </div>
-        <a href="#" class="next"></a>
+        <a href="#" class="nextFrame"></a>
     </div>
 
     <div class="frame references pt white" data-anchor="references">

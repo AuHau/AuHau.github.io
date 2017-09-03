@@ -94,7 +94,7 @@ $(document).ready(function(){
 
     $(window).on('resize scroll', menuColorSwitcher);
 
-    $('a.next').click(nextHandler);
+    $('a.nextFrame').click(nextHandler);
 
     responsiveNav(".menu-container", {
         label: "<i class='fa fa-bars'></i>",

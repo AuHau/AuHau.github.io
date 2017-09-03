@@ -22,10 +22,46 @@
 
     &.white {
       background-color: @orange;
+      .nav-toggle{
+        color: @white;
+      }
+
+      .logo{
+        background-position: right center;
+      }
+
+      ul#menu li{
+        a{
+          color: @white;
+        }
+      }
     }
 
     &.orange {
       background-color: @white;
+
+      .nav-toggle{
+        color: @orange;
+      }
+
+      .logo{
+        background-position: left center;
+      }
+
+      .arrow-left{
+        background-position: -2px -74px ;
+      }
+
+      ul#menu li{
+        a{
+          color: @orange;
+        }
+
+        &.active a, a:hover, a:focus {
+          color: @orange;
+          border-top-color: @orange;
+        }
+      }
     }
   }
 
