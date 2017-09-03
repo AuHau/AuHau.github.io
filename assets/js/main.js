@@ -43,7 +43,6 @@ var removeClasses = function ($elem) {
  * Menu color changer for normal scrolling
  */
 var menuColorSwitcher = function (e) {
-    e.preventDefault();
 
     var frames = $(".frame");
     var $nav = $('nav');
@@ -67,6 +66,8 @@ var menuColorSwitcher = function (e) {
         }
 
     }
+    
+    return false;
 };
 
 /**
@@ -87,6 +88,7 @@ $(document).ready(function(){
         sectionSelector: '.frame',
         recordHistory: false,
         scrollBar: true,
+        onLeave: function(i, nextI) {navHandler(nextI)},
         responsiveWidth: RESPONSIVE_WIDTH
     });
 
