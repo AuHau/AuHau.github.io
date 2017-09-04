@@ -42,7 +42,7 @@ gulp.task('css', function() {
         .on('error', plugins.notify.onError("Error: <%= error.file %> <%= error.message %>"))
         .pipe(plugins.concat(CSS_FILE_NAME))
         .pipe(plugins.if(argv.production, minifyCss()))
-        .pipe(gulp.dest(BUILD_PATH))
+        .pipe(gulp.dest(BUILD_PATH + 'css/'))
         .pipe(plugins.notify('CSS build finished'));
 });
 
