@@ -76,7 +76,7 @@ gulp.task('fonts', function() {
     return gulp.src(mainBowerFiles('**/*.{'+ fonts +'}'))
         .pipe(plugins.addSrc(ASSETS_PATH + 'fonts/**/*.{'+ fonts +'}'))
         .pipe(plugins.flatten())
-        .pipe(gulp.dest(BUILD_PATH + 'fonts/'))
+        .pipe(gulp.dest('fonts/'))
 });
 
 gulp.task('build', ['js', 'js:libs', 'css', 'fonts', 'images']);
