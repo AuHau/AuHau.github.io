@@ -89,8 +89,43 @@
         <a href="#" class="nextFrame"></a>
     </div>
 
-    <div class="frame togglcli white" data-anchor="projects-togglcli">
+    <div class="frame ipfs-publish white" data-anchor="projects-ipfs-publish">
         <div class="project-container wrapper reversed">
+            <div class="column">
+                <h2>IPFS Publish</h2>
+
+                <div class="tags">
+                    <div>IPFS</div>
+                    <div>Continuous Delivery</div>
+                </div>
+
+                <div class="text">
+                    IPFS Publish is a tool that aims to enable automatic publishing of static webpages from Git
+                    repositories
+                    into IPFS. It consists of two parts: small web server and management CLI.
+
+                    Web server exposes an endpoint which you use as your Git's webhook. When the hook is invoked, it
+                    clones your repo, build it (if needed), add it to the IPFS node (pin it if configured) and publish
+                    the new IPFS address under configured IPNS name.
+
+
+                </div>
+
+                <div class="text-center">
+                    <a href="https://github.com/AuHau/ipfs-publish" class="check-github btn" target="_blank">Check on
+                        GitHub
+                        <i class="fa fa-github"></i></a>
+                </div>
+            </div>
+            <div class="column text-center">
+                <img src="build/images/ipfs-publish.png" alt="IPFS Publish love">
+            </div>
+        </div>
+        <a href="#" class="nextFrame"></a>
+    </div>
+
+    <div class="frame togglcli orange" data-anchor="projects-togglcli">
+        <div class="project-container wrapper">
             <div class="column">
                 <h2>Toggl CLI</h2>
 
@@ -118,8 +153,8 @@
         </div>
         <a href="#" class="nextFrame"></a>
     </div>
-    <div class="frame dagui orange" data-anchor="projects-dagui">
-        <div class="project-container wrapper">
+    <div class="frame dagui white" data-anchor="projects-dagui">
+        <div class="project-container wrapper reversed">
             <div class="column">
                 <h2>daGui</h2>
 
@@ -220,8 +255,8 @@
     <!--<a href="#" class="nextFrame"></a>-->
     <!--</div>-->
 
-    <div class="frame home-myo white" data-anchor="projects-home-myo">
-        <div class="project-container wrapper reversed">
+    <div class="frame home-myo orange" data-anchor="projects-home-myo">
+        <div class="project-container wrapper">
             <div class="column">
                 <h2>Home Myo</h2>
 
@@ -258,8 +293,8 @@
         <a href="#" class="nextFrame"></a>
     </div>
 
-    <div class="frame picker orange" data-anchor="projects-picker">
-        <div class="project-container wrapper ">
+    <div class="frame picker white" data-anchor="projects-picker">
+        <div class="project-container reversed wrapper ">
             <div class="column">
 
                 <h2>Select Picker</h2>
@@ -292,7 +327,7 @@
         <a href="#" class="nextFrame"></a>
     </div>
 
-    <div class="frame references pt white" data-anchor="references">
+    <div class="frame references pt orange" data-anchor="references">
         <div class="wrapper">
             <h2>References</h2>
 
