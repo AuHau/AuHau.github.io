@@ -53,3 +53,5 @@ node_modules
 
 # Bower
 bower_components
+
+.DS_Store
