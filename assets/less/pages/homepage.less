@@ -234,25 +234,25 @@
         display: inline-block;
         width: 64px;
         height: 64px;
-        background: no-repeat no-repeat;
         margin-right: 20px;
-        font-size: 0;
+        font-size: 34px;
+        border: 3px solid @white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 63px;
+
+        background-color: @white;
+        color: @orange;
+
+        &:hover{
+          background-color: @orange;
+          color: @white;
+        }
 
         &:last-child{
           margin-right: 0;
         }
 
-        &.networks-fb:extend(.fb){}
-        &.networks-fb:hover:extend(.fb-hover){}
-
-        &.networks-linkedin:extend(.linkedin){}
-        &.networks-linkedin:hover:extend(.linkedin-hover){}
-
-        &.networks-github:extend(.github){}
-        &.networks-github:hover:extend(.github-hover){}
-
-        &.networks-google:extend(.google-plus){}
-        &.networks-google:hover:extend(.google-plus-hover){}
       }
     }
 
