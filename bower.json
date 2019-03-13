@@ -23,20 +23,26 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.5",
-    "font-awesome": "~4.4.0",
+    "font-awesome": "~5.7.2",
     "fullpage.js": "^2.9.7",
     "responsive-nav": "~1.0.39"
   },
   "overrides": {
     "font-awesome": {
       "main": [
-        "css/font-awesome.css",
-        "scss/font-awesome.scss",
-        "fonts/fontawesome-webfont.eot",
-        "fonts/fontawesome-webfont.woff",
-        "fonts/fontawesome-webfont.woff2",
-        "fonts/fontawesome-webfont.ttf",
-        "fonts/fontawesome-webfont.svg"
+        "css/brands.css",
+        "css/solid.css",
+        "css/fontawesome.css",
+        "webfonts/fa-brands-400.eot",
+        "webfonts/fa-brands-400.woff",
+        "webfonts/fa-brands-400.woff2",
+        "webfonts/fa-brands-400.ttf",
+        "webfonts/fa-brands-400.svg",
+        "webfonts/fa-solid-900.eot",
+        "webfonts/fa-solid-900.woff",
+        "webfonts/fa-solid-900.woff2",
+        "webfonts/fa-solid-900.ttf",
+        "webfonts/fa-solid-900.svg"
       ]
     },
     "responsive-nav": {

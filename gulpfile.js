@@ -42,7 +42,7 @@ gulp.task('css', function() {
         .on('error', plugins.notify.onError("Error: <%= error.file %> <%= error.message %>"))
         .pipe(plugins.concat(CSS_FILE_NAME))
         .pipe(plugins.if(argv.production, minifyCss()))
-        .pipe(gulp.dest(BUILD_PATH))
+        .pipe(gulp.dest(BUILD_PATH + 'css/'))
         .pipe(plugins.notify('CSS build finished'));
 });
 
@@ -53,7 +53,7 @@ gulp.task('js', function() {
         .pipe(plugins.concat(JS_FILE_NAME))
         .pipe(plugins.if(!argv.production, plugins.sourcemaps.write()))
         .pipe(plugins.if(argv.production, plugins.uglify()))
-        .pipe(gulp.dest(BUILD_PATH))
+        .pipe(gulp.dest(BUILD_PATH + 'js/'))
         .pipe(plugins.notify('JS build finished'));
 });
 
@@ -62,7 +62,7 @@ gulp.task('js:libs', function() {
         .on('error', plugins.notify.onError("Error: <%= error.file %> <%= error.message %>"))
         .pipe(plugins.concat(JS_LIB_FILE_NAME))
         .pipe(plugins.if(argv.production, plugins.uglify()))
-        .pipe(gulp.dest(BUILD_PATH));
+        .pipe(gulp.dest(BUILD_PATH + 'js/'));
 });
 
 gulp.task('images', function() {
@@ -74,9 +74,9 @@ gulp.task('fonts', function() {
     var fonts = ['ttf', 'woff', 'woff2', 'eot', 'svg'].join(',');
 
     return gulp.src(mainBowerFiles('**/*.{'+ fonts +'}'))
-        .pipe(plugins.addSrc(ASSETS_PATH + 'fonts/**/*.{'+ fonts +'}'))
+        .pipe(plugins.addSrc(ASSETS_PATH + 'webfonts/**/*.{'+ fonts +'}'))
         .pipe(plugins.flatten())
-        .pipe(gulp.dest('fonts/'))
+        .pipe(gulp.dest(BUILD_PATH + 'webfonts/'))
 });
 
 gulp.task('build', ['js', 'js:libs', 'css', 'fonts', 'images']);

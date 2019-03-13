@@ -97,7 +97,7 @@ $(document).ready(function(){
     $('a.nextFrame').click(nextHandler);
 
     responsiveNav(".menu-container", {
-        label: "<i class='fa fa-bars'></i>",
+        label: "<i class='fas fa-bars'></i>",
         closeOnNavClick: true
     });
 });
