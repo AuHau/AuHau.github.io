@@ -1,12 +1,11 @@
 BEGIN:VCARD
 VERSION:4.0
 N:Uhlíř;Adam;;MSc.;
-EMAIL;INTERNET:hello@adam-uhlir.me
-TEL;WORK:+16503139746
+EMAIL;INTERNET:adam@uhlir.dev
 TEL;CELL:+420607963319
-URL:https://www.adam-uhlir.me
-PHOTO;MEDIATYPE=image/jpeg:https://adam-uhlir.me/build/images/me_square.jpg
-KEY;MEDIATYPE=application/pgp-keys:https://adam-uhlir.me/key.pgp
-LOGO;MEDIATYPE=image/png:https://adam-uhlir.me/build/images/logo.png
+URL:https://www.uhlir.dev
+PHOTO;MEDIATYPE=image/jpeg:https://uhlir.dev/build/images/me_square.jpg
+KEY;MEDIATYPE=application/pgp-keys:https://uhlir.dev/key.pgp
+LOGO;MEDIATYPE=image/png:https://uhlir.dev/build/images/logo.png
 X-TWITTER:UhlirAdam
 END:VCARD
