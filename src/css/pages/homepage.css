@@ -1,0 +1,261 @@
+.main .welcome {
+  background: url('/images/main.jpg') center 70% no-repeat no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.main .welcome .welcome-container {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(76, 50, 0, 0.4);
+}
+
+.main .welcome .hello,
+.main .welcome .work {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+.main .welcome .hello {
+  top: 50%;
+  margin-top: -80px;
+}
+
+.main .welcome .hello .i-am {
+  font-size: 60px;
+}
+
+.main .welcome .hello .portfolio {
+  font-size: 36px;
+}
+
+.main .welcome .work {
+  bottom: 12%;
+  font-size: 36px;
+}
+
+.main .welcome .links {
+  margin-top: 25px;
+}
+
+.main .welcome .links .btn.toPhoto {
+  margin-right: 40px;
+}
+
+.main .welcome .links .btn.toPhoto::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.main .welcome .links .btn.toIt::before {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.main .about-me h2 {
+  margin-bottom: 40px;
+}
+
+.main .about-me img.me {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.main .about-me .text-container {
+  width: 100%;
+  overflow: hidden;
+  display: table;
+}
+
+.main .about-me .image-container,
+.main .about-me .text {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+
+.main .about-me .quote {
+  display: none;
+  width: 80%;
+  margin: 5% auto 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.main .about-me .quote .author {
+  text-align: right;
+  font-size: 18px;
+}
+
+.main .experiences h3 {
+  text-align: center;
+}
+
+.main .experiences li {
+  margin-bottom: 10px;
+}
+
+.main .experiences li > ul > li {
+  margin-bottom: 0;
+}
+
+.main .experiences li a {
+  font-weight: bold;
+}
+
+.frame.choice {
+  background: url('/images/darth_vader.jpg') center center no-repeat no-repeat;
+  background-size: cover;
+}
+
+.main .frame.choice .dark {
+  color: var(--red);
+}
+
+.main .frame.choice .frame-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.main .frame.choice .frame-align > div {
+  text-align: center;
+}
+
+.main .frame.choice a.toIt,
+.main .frame.choice a.toPhoto {
+  display: inline-block;
+  position: relative;
+}
+
+.main .frame.choice a.toIt .choice-image,
+.main .frame.choice a.toPhoto .choice-image {
+  display: inline-block;
+  position: relative;
+}
+
+.main .frame.choice a.toIt .choice-image img,
+.main .frame.choice a.toPhoto .choice-image img {
+  max-width: 100%;
+}
+
+.main .frame.choice a.toIt .overlay,
+.main .frame.choice a.toPhoto .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: none;
+}
+
+.main .frame.choice a.toIt .overlay .overlay-align,
+.main .frame.choice a.toPhoto .overlay .overlay-align {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.main .frame.choice a.toIt .overlay .overlay-text,
+.main .frame.choice a.toPhoto .overlay .overlay-text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 45px;
+}
+
+.main .frame.choice a.toIt:hover .overlay,
+.main .frame.choice a.toPhoto:hover .overlay {
+  display: block;
+}
+
+.main .frame.choice a.toIt .arrow-left-big,
+.main .frame.choice a.toIt .arrow-right-big,
+.main .frame.choice a.toPhoto .arrow-left-big,
+.main .frame.choice a.toPhoto .arrow-right-big {
+  position: absolute;
+  top: 50%;
+  margin-top: -65px;
+}
+
+.main .frame.choice a.toPhoto {
+  padding-left: 60px;
+}
+
+.main .frame.choice a.toPhoto .arrow-left-big {
+  left: -60px;
+}
+
+.main .frame.choice a.toIt {
+  padding-right: 60px;
+}
+
+.main .frame.choice a.toIt .arrow-right-big {
+  right: -60px;
+}
+
+.main .contact {
+  text-align: center;
+}
+
+.main .contact .contact-details {
+  margin-top: 50px;
+  font-size: 36px;
+  line-height: 60px;
+}
+
+.main .contact .pgp {
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.main .contact .networks {
+  margin-top: 30px;
+}
+
+.main .contact .networks a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-right: 20px;
+  font-size: 34px;
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 63px;
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.main .contact .networks a:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.main .contact .networks a:last-child {
+  margin-right: 0;
+}
+
+.main .contact .footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,430 @@
+html, body {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  width: 290px;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: var(--orange);
+  border-color: var(--orange);
+  text-decoration: none;
+}
+
+.frame {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame.pt {
+  padding-top: 64px;
+}
+
+.frame h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.frame .frame-align {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  flex: 1;
+}
+
+.frame .frame-align > h2 {
+  width: 100%;
+}
+
+.frame .frame-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  flex: 1;
+}
+
+.frame .small-container {
+  width: 90%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.frame .nextFrame {
+  position: absolute;
+  left: calc(50% - 17px);
+  bottom: 20px;
+  display: inline-block;
+  width: 34px;
+  height: 19px;
+}
+
+.frame.orange {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.frame.orange a,
+.frame.orange a:hover {
+  color: var(--white);
+}
+
+.frame.orange .btn {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.frame.orange .btn:hover {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.frame.white {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.frame.white a,
+.frame.white a:hover {
+  color: var(--orange);
+}
+
+.frame.white .btn {
+  color: var(--orange);
+  border-color: var(--orange);
+}
+
+.frame.white .btn:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+  display: table;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+}
+
+nav .logo {
+  display: inline-block;
+  width: 69px;
+  height: 41px;
+  background: url('/images/logo_sprite.png') no-repeat no-repeat left center;
+}
+
+nav > .logo,
+nav .back {
+  float: left;
+  display: inline-block;
+  height: 41px;
+  margin-left: 80px;
+  margin-top: 13px;
+}
+
+nav .back {
+  text-decoration: none;
+}
+
+nav .back:hover {
+  text-decoration: none;
+}
+
+nav .back .arrow-left {
+  position: relative;
+  top: -3px;
+}
+
+nav .menu-container {
+  float: right;
+}
+
+nav ul#menu {
+  text-align: right;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul#menu li {
+  display: inline-block;
+  margin-right: 50px;
+  width: auto;
+}
+
+nav ul#menu li a {
+  font-size: 22px;
+  display: inline-block;
+  padding: 18px 5px 15px;
+  text-decoration: none;
+}
+
+nav ul#menu li a:hover {
+  background-color: transparent;
+  color: var(--orange);
+  text-decoration: none;
+  border-top: 3px solid var(--orange);
+  padding-top: 15px;
+}
+
+nav ul#menu li a:focus {
+  text-decoration: none;
+}
+
+nav ul#menu li.active a {
+  background-color: transparent;
+  color: var(--orange);
+  text-decoration: none;
+  border-top: 3px solid var(--orange);
+  padding-top: 15px;
+}
+
+nav ul#menu li.choice a,
+nav ul#menu li.active.choice a {
+  color: #FF0000;
+  border-top-color: #FF0000;
+}
+
+/* Nav white variant */
+nav.white .logo {
+  background-position: left center;
+}
+
+nav.white .back {
+  color: var(--orange);
+}
+
+nav.white ul#menu li a {
+  color: var(--orange);
+}
+
+nav.white ul#menu li.active a,
+nav.white ul#menu li a:hover,
+nav.white ul#menu li a:focus {
+  color: var(--orange);
+  border-top-color: var(--orange);
+}
+
+nav.white ul#menu li.choice a,
+nav.white ul#menu li.active.choice a {
+  color: #FF0000;
+  border-top-color: #FF0000;
+}
+
+/* Nav orange variant */
+nav.orange .logo {
+  background-position: right center;
+}
+
+nav.orange .back {
+  color: var(--white);
+}
+
+nav.orange ul#menu li a {
+  color: var(--white);
+}
+
+nav.orange ul#menu li.active a,
+nav.orange ul#menu li a:hover,
+nav.orange ul#menu li a:focus {
+  color: var(--white);
+  border-top-color: var(--white);
+}
+
+nav.orange ul#menu li.choice a,
+nav.orange ul#menu li.active.choice a {
+  color: var(--light-red);
+  border-top-color: var(--light-red);
+}
+
+/* Hamburger menu (CSS-only) */
+.nav-toggle-checkbox {
+  display: none;
+}
+
+.nav-toggle {
+  display: none;
+  float: right;
+  font-size: 32px;
+  padding: 4px 10px 0;
+  margin-right: 10px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.hamburger-icon {
+  display: inline-block;
+  width: 24px;
+  height: 3px;
+  background: currentColor;
+  position: relative;
+  vertical-align: middle;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: currentColor;
+  position: absolute;
+  left: 0;
+}
+
+.hamburger-icon::before {
+  top: -8px;
+}
+
+.hamburger-icon::after {
+  top: 8px;
+}
+
+nav.white .nav-toggle {
+  color: var(--orange);
+}
+
+nav.orange .nav-toggle {
+  color: var(--white);
+}
+
+/* CSS Arrow Shapes (replacing sprites) */
+
+/* Down arrow chevron for .nextFrame */
+.frame .nextFrame::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  left: 7px;
+}
+
+.frame.orange .nextFrame::after {
+  border-color: var(--white);
+}
+
+.frame.white .nextFrame::after {
+  border-color: var(--orange);
+}
+
+.frame.orange .nextFrame:hover::after {
+  border-color: var(--white);
+  opacity: 0.7;
+}
+
+.frame.white .nextFrame:hover::after {
+  border-color: var(--orange);
+  opacity: 0.7;
+}
+
+/* Left/right small arrows (carousel, back button) */
+.arrow-left,
+.arrow-right {
+  display: inline-block;
+  width: 19px;
+  height: 35px;
+  position: relative;
+}
+
+.arrow-left::after,
+.arrow-right::after {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 50%;
+}
+
+.arrow-left::after {
+  border-left: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+  left: 4px;
+}
+
+.arrow-right::after {
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: translateY(-50%) rotate(-45deg);
+  right: 4px;
+}
+
+/* Big arrows for choice section */
+.arrow-left-big,
+.arrow-right-big {
+  display: inline-block;
+  width: 70px;
+  height: 128px;
+  position: relative;
+}
+
+.arrow-left-big::after,
+.arrow-right-big::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+}
+
+.arrow-left-big::after {
+  border-left: 4px solid var(--white);
+  border-bottom: 4px solid var(--white);
+  transform: translateY(-50%) rotate(45deg);
+  left: 15px;
+}
+
+.arrow-right-big::after {
+  border-right: 4px solid var(--white);
+  border-top: 4px solid var(--white);
+  transform: translateY(-50%) rotate(45deg);
+  right: 15px;
+}

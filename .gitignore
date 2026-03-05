@@ -51,7 +51,7 @@ crashlytics-build.properties
 # NPM
 node_modules
 
-# Bower
-bower_components
+# Build output
+/build/
 
 .DS_Store

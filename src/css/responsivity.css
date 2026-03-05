@@ -1,0 +1,451 @@
+@media screen and (max-width: 1050px) {
+  nav > .logo,
+  nav .back {
+    margin-left: 10px;
+  }
+
+  nav ul#menu li {
+    margin-right: 30px;
+  }
+
+  .main nav > .logo {
+    margin-left: 35px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  nav {
+    box-shadow: 0 -31px 42px 31px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  nav.white {
+    background-color: var(--orange);
+  }
+
+  nav.white .nav-toggle {
+    color: var(--white);
+  }
+
+  nav.white .logo {
+    background-position: right center;
+  }
+
+  nav.white ul#menu li a {
+    color: var(--white);
+  }
+
+  nav.orange {
+    background-color: var(--white);
+  }
+
+  nav.orange .nav-toggle {
+    color: var(--orange);
+  }
+
+  nav.orange .logo {
+    background-position: left center;
+  }
+
+  nav.white .back {
+    color: var(--white);
+  }
+
+  nav.orange .back {
+    color: var(--orange);
+  }
+
+  nav.orange ul#menu li a {
+    color: var(--orange);
+  }
+
+  nav.orange ul#menu li.active a,
+  nav.orange ul#menu li a:hover,
+  nav.orange ul#menu li a:focus {
+    color: var(--orange);
+    border-top-color: var(--orange);
+  }
+
+  /*.frame.welcome,*/
+  /*.frame.choice {*/
+  /*  height: auto;*/
+  /*  min-height: 100vh;*/
+  /*}*/
+
+  .frame:not(.choice):not(.welcome),
+  .frame.choice .frame-overlay {
+    padding: 60px 0;
+  }
+
+  .frame.pt {
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 857px) {
+  nav > .logo,
+  nav .back {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  nav .menu-container {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  nav .nav-toggle-checkbox:checked ~ .menu-container {
+    max-height: 500px;
+  }
+
+  nav .nav-toggle {
+    display: block;
+  }
+
+  nav .menu-container ul#menu {
+    display: block;
+    padding-bottom: 20px;
+  }
+
+  nav .menu-container ul#menu li {
+    width: 50%;
+    text-align: center;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  nav .menu-container ul#menu li a:hover,
+  nav .menu-container ul#menu li.active a {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 3px solid var(--orange);
+  }
+
+  nav.white ul#menu li a:hover,
+  nav.white ul#menu li.active a {
+    border-color: var(--white);
+    color: var(--white);
+  }
+
+  .frame:not(.choice):not(.welcome),
+  .frame.choice .frame-overlay {
+    padding: 60px 0;
+  }
+}
+
+@media screen and (min-width: 858px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  nav .menu-container {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  nav .menu-container ul#menu li {
+    width: 100%;
+  }
+
+  .main .welcome .hello .i-am .adam {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .wrapper {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  *[class^="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .choice .frame-align {
+    padding: 0 20px;
+  }
+
+  .main .frame.choice .frame-align {
+    display: block;
+  }
+
+  .main .frame.choice a.toPhoto {
+    padding-left: 0;
+    margin-bottom: 30px;
+  }
+
+  .main .frame.choice a.toIt {
+    padding-right: 0;
+  }
+
+  .main .frame.choice a.toPhoto .arrow-left-big,
+  .main .frame.choice a.toPhoto .arrow-right-big,
+  .main .frame.choice a.toIt .arrow-left-big,
+  .main .frame.choice a.toIt .arrow-right-big {
+    display: none;
+  }
+
+  .main .frame.choice a.toPhoto .overlay,
+  .main .frame.choice a.toIt .overlay {
+    display: block;
+  }
+
+  .main .experiences .small-container {
+    text-align: center;
+  }
+
+  .main .experiences ul {
+    display: inline-block;
+  }
+
+  .main .experiences ul ul {
+    display: block;
+  }
+
+  .main .experiences li {
+    text-align: left;
+  }
+
+  .it .references .reference {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .it .references .reference img {
+    max-width: 50%;
+  }
+
+  .it .references .reference .description {
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 40px;
+  }
+
+  .main .frame.choice a.toIt .overlay .overlay-text,
+  .main .frame.choice a.toPhoto .overlay .overlay-text {
+    font-size: 33px;
+  }
+
+  .main .welcome .hello {
+    top: 30%;
+    margin-top: -20px;
+  }
+
+  .main .welcome .hello .i-am {
+    font-size: 40px;
+  }
+
+  .main .welcome .hello .portfolio {
+    font-size: 24px;
+  }
+
+  .main .welcome .work {
+    bottom: 12%;
+    font-size: 24px;
+  }
+
+  .main .welcome .links .btn {
+    font-size: 20px;
+  }
+
+  .main .welcome .links .btn.toPhoto {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .main .about-me .text-container {
+    display: block;
+  }
+
+  .main .about-me .image-container,
+  .main .about-me .text {
+    display: block;
+    float: none;
+  }
+
+  .main .about-me .image-container {
+    text-align: center;
+  }
+
+  .main .about-me .image-container img {
+    max-width: 250px;
+  }
+
+  .main .about-me .text {
+    margin-bottom: 20px;
+  }
+
+  .main .small-container {
+    width: 100%;
+  }
+
+  .main .small-container > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .main .experiences ul {
+    padding-left: 17px;
+  }
+
+  .main .choice h2 {
+    font-size: 34px;
+  }
+
+  .main .contact .contact-details {
+    font-size: 25px;
+  }
+
+  .it .it-skills .collage-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .it .project-container {
+    flex-wrap: wrap;
+  }
+
+  .it .project-container .column,
+  .it .project-container .column:first-child,
+  .it .project-container .column:last-child,
+  .it .project-container.reversed .column,
+  .it .project-container.reversed .column:first-child,
+  .it .project-container.reversed .column:last-child {
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+
+  .it .project-container .column:last-child,
+  .it .project-container.reversed .column:last-child {
+    margin-top: 30px;
+  }
+
+  .it .references .reference {
+    text-align: center;
+    height: auto;
+  }
+
+  .it .references .reference img {
+    max-width: 100%;
+    max-height: 250px;
+  }
+
+  .it .references .reference .description {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .it .references .reference .description .more {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+
+  .frame {
+    scroll-snap-align: start;
+    height: 100vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 60px;
+  }
+
+  .it .reference {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .wrapper {
+    width: 80%;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .main .welcome .hello .i-am {
+    font-size: 85px;
+  }
+
+  .main .experiences h3 {
+    text-align: left;
+  }
+
+  .main .about-me .img-container {
+    width: 25%;
+    margin-right: 5%;
+  }
+
+  .main .about-me .text {
+    width: 70%;
+  }
+
+  .main .about-me .quote {
+    display: block;
+  }
+
+  .main .choice h2 {
+    margin-bottom: 100px;
+  }
+
+  .main .contact .contact-details {
+    margin-top: 100px;
+  }
+
+  .main .contact .networks {
+    margin-top: 100px;
+  }
+
+  .it .project-container h2 {
+    margin-bottom: 40px;
+  }
+
+  .it .reference .more {
+    display: inline;
+  }
+
+  .it .reference {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  .wrapper {
+    width: 75%;
+  }
+
+  h2 {
+    margin-bottom: 60px;
+  }
+
+  .main .choice h2 {
+    margin-bottom: 150px;
+  }
+}

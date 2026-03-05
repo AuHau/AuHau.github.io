@@ -1,0 +1,110 @@
+/* CSS Custom Properties */
+:root {
+  --white: #fff;
+  --orange: #F9A40D;
+  --red: #bd1919;
+  --light-red: #d41e1e;
+  --body-bg: var(--orange);
+  --text-color: var(--white);
+  --link-color: var(--white);
+  --font-family-base: Comfortaa, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-size-base: 18px;
+}
+
+/* Minimal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: 1.428571429;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--body-bg);
+  color: var(--text-color);
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 31px;
+}
+
+ul {
+  margin-top: 0;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+/* Grid helpers (float-based, used sparingly) */
+.col-sm-4,
+.col-sm-8,
+.col-md-6 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+  .col-sm-4 {
+    float: left;
+    width: 33.33333%;
+  }
+  .col-sm-8 {
+    float: left;
+    width: 66.66667%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-6 {
+    float: left;
+    width: 50%;
+  }
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
