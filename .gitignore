@@ -54,4 +54,8 @@ node_modules
 # Bower
 bower_components
 
+# SvelteKit
+build/
+.svelte-kit/
+
 .DS_Store
