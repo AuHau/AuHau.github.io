@@ -20,13 +20,7 @@
     menuOpen = false;
     const el = document.querySelector(`[data-anchor="${anchor}"]`);
     if (el) {
-      const page = document.querySelector('.page');
-      if (page) {
-        const frameTop = el.offsetTop;
-        page.scrollTo({ top: frameTop, behavior: 'smooth' });
-      } else {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -55,22 +49,37 @@
 
     const page = document.querySelector('.page');
 
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          const anchor = entry.target.dataset.anchor;
-          if (anchor) {
-            activeAnchor = anchor;
-            menuColorSwitcher();
+    const isDesktop = () => window.innerWidth >= 1025;
+
+    let observer;
+
+    const createObserver = () => {
+      if (observer) observer.disconnect();
+      const root = isDesktop() ? page : null;
+      observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const anchor = entry.target.dataset.anchor;
+            if (anchor) {
+              activeAnchor = anchor;
+              menuColorSwitcher();
+            }
           }
         }
-      }
-    }, { root: page, threshold: 0.6 });
+      }, { root, threshold: 0.6 });
+      document.querySelectorAll('.frame[data-anchor]').forEach(f => observer.observe(f));
+    };
 
-    document.querySelectorAll('.frame[data-anchor]').forEach(f => observer.observe(f));
+    createObserver();
+
+    const onResize = () => {
+      menuColorSwitcher();
+      createObserver();
+    };
 
     if (page) page.addEventListener('scroll', menuColorSwitcher);
-    window.addEventListener('resize', menuColorSwitcher);
+    window.addEventListener('scroll', menuColorSwitcher);
+    window.addEventListener('resize', onResize);
     menuColorSwitcher();
 
     // Set initial active to first frame
@@ -80,7 +89,8 @@
     return () => {
       observer.disconnect();
       if (page) page.removeEventListener('scroll', menuColorSwitcher);
-      window.removeEventListener('resize', menuColorSwitcher);
+      window.removeEventListener('scroll', menuColorSwitcher);
+      window.removeEventListener('resize', onResize);
     };
   });
 </script>

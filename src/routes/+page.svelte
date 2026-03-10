@@ -14,9 +14,27 @@
     if (page) page.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
   }
 
+function getAge(birthday) {
+  const birth = new Date(birthday);
+  const today = new Date();
+
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+    age--;
+  }
+
+  return age;
+}
+
   onMount(() => {
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const ageEl = document.getElementById('age');
+    if (ageEl) ageEl.textContent = getAge("1992-05-10");
+
   });
 </script>
 

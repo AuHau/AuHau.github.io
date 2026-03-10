@@ -670,7 +670,7 @@ nav.orange ul#menu li a:focus {
 }
 
 .main .contact .contact-details {
-  margin-top: 50px;
+  margin-top: 40px;
   font-size: 36px;
   line-height: 60px;
 }
@@ -681,7 +681,7 @@ nav.orange ul#menu li a:focus {
 }
 
 .main .contact .networks {
-  margin-top: 30px;
+  margin-top: 70px;
 }
 
 .main .contact .networks a {
@@ -974,6 +974,12 @@ nav.orange ul#menu li a:focus {
   nav.white .nav-toggle { color: var(--white); }
   nav.white .logo { background-position: right center; }
   nav.white ul#menu li a { color: var(--white); }
+  nav.white ul#menu li.active a,
+  nav.white ul#menu li a:hover,
+  nav.white ul#menu li a:focus {
+    color: var(--white);
+    border-top-color: var(--white);
+  }
 
   nav.orange {
     background-color: var(--white);
@@ -1019,7 +1025,7 @@ nav.orange ul#menu li a:focus {
     float: none;
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
     flex-wrap: wrap;
   }
@@ -1035,8 +1041,8 @@ nav.orange ul#menu li a:focus {
   }
 
   nav ul#menu li {
-    width: 50%;
-    display: inline-block;
+    width: 100%;
+    display: block;
     text-align: center;
     margin-right: 0;
     margin-top: 10px;
@@ -1059,6 +1065,8 @@ nav.orange ul#menu li a:focus {
     display: block;
     float: none;
     margin: 0;
+    margin-top: 16px;
+    padding-right: 15px;
   }
 
   .frame:not(.choice):not(.welcome),
@@ -1068,10 +1076,6 @@ nav.orange ul#menu li a:focus {
 }
 
 @media screen and (max-width: 450px) {
-  nav ul#menu li {
-    width: 100%;
-  }
-
   .main .welcome .hello .i-am .adam {
     display: block;
   }
@@ -1164,6 +1168,9 @@ nav.orange ul#menu li a:focus {
     font-size: 33px;
   }
 
+  .main .welcome {
+    background-position-x: 70%;
+  }
   .main .welcome .hello {
     top: 30%;
     margin-top: -20px;
