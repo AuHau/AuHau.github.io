@@ -27,6 +27,7 @@ body {
   font-size: var(--font-size);
   background-color: var(--orange);
   color: var(--white);
+  line-height: 1.42857143
 }
 
 a {
@@ -137,7 +138,7 @@ strong {
   align-items: center;
 }
 
-/* Welcome and choice use absolutely-positioned children — require fixed height */
+/* Welcome and choice use absolutely-positioned children â€” require fixed height */
 .frame.welcome,
 .frame.choice {
   min-height: 100vh;
@@ -260,6 +261,10 @@ strong {
   box-sizing: border-box;
 }
 
+.col-md-4, .col-md-6, .col-sm-4, .col-sm-8 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .col-sm-8 { width: 66.666%; }
 .col-sm-4 { width: 33.333%; }
 .col-md-6 { width: 50%; }
@@ -434,9 +439,9 @@ nav.orange ul#menu li a:focus {
 
 /* Welcome */
 .main .welcome {
-  background: url('/images/main.jpg') center 70% no-repeat;
+  background: url('/images/main.jpg') center 20% no-repeat;
   background-size: cover;
-  display: block; /* override flex — content is absolute */
+  display: block; /* override flex â€” content is absolute */
 }
 
 .main .welcome .welcome-container {
@@ -515,10 +520,6 @@ nav.orange ul#menu li a:focus {
   margin-bottom: 40px;
 }
 
-.main .about-me .wrapper {
-  padding: 0 80px;
-}
-
 .main .about-me img.me {
   width: 100%;
   border-radius: 50%;
@@ -534,12 +535,6 @@ nav.orange ul#menu li a:focus {
 .main .about-me .image-container,
 .main .about-me .text {
   float: none;
-}
-
-.main .about-me .text-container .col-sm-8 {
-  float: none;
-  width: 66.666%;
-  flex-shrink: 0;
 }
 
 .main .about-me .text-container .col-sm-4 {
@@ -564,6 +559,10 @@ nav.orange ul#menu li a:focus {
 /* Experiences */
 .main .experiences h3 {
   text-align: center;
+}
+
+.main .experiences h2 {
+  margin-bottom: 40px;
 }
 
 .main .experiences li {
@@ -1006,7 +1005,7 @@ nav.orange ul#menu li a:focus {
   nav {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
   }
 
   nav > .logo,
@@ -1282,7 +1281,7 @@ nav.orange ul#menu li a:focus {
 }
 
 @media screen and (min-width: 1200px) {
-  .wrapper { width: 90%; }
+  .wrapper {/* width: 90%; */}
   h2 { font-size: 60px; }
   .it .reference { font-size: 16px; }
 }

@@ -82,16 +82,17 @@
           <div class="col-md-6">
             <h3>Work experience</h3>
             <ul>
-              <li><a href="https://logos.co/">Logos Storage / Codex</a> - Senior Software Engineer
+              <li><a href="https://logos.co/">Logos Storage / Codex</a> - Senior Software Engineer<br>Nop
+
                 (Feb 2023 - present)
               </li>
-              <li><a href="https://ethswarm.org/">Swarm Foundation</a> - Senior Software Engineer
+              <li><a href="https://ethswarm.org/">Swarm Foundation</a> - Senior Software Engineer<br>
                 (Feb 2021 - Jan 2023)
               </li>
-              <li><a href="https://iovlabs.org/">IOV Labs</a> - Senior Software Engineer
+              <li><a href="https://iovlabs.org/">IOV Labs</a> - Senior Software Engineer<br>
                 (Nov 2019 - Feb 2021)
               </li>
-              <li><a href="https://www.sap.com/">SAP</a> - Technology Associate in Multi-cloud Technology Office
+              <li><a href="https://www.sap.com/">SAP</a> - Technology Associate in Multi-cloud Technology Office<br>
                 (June 2018 - June 2019)
               </li>
               <li><a href="https://u.plus/">Usertech s.r.o.</a> - Backend developer<br>
