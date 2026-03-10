@@ -892,6 +892,131 @@ nav.orange ul#menu li a:focus {
   display: inline-block;
 }
 
+.it .carousel .item-wrapper .img-open {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: zoom-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Carousel modal */
+.carousel-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: carousel-modal-fade-in 0.2s ease;
+}
+
+@keyframes carousel-modal-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.carousel-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: calc(100vw - 160px);
+  max-height: 90vh;
+}
+
+.carousel-modal-content img {
+  max-width: 100%;
+  max-height: calc(90vh - 48px);
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-modal-caption {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin: 0;
+}
+
+.carousel-modal-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 6px;
+  line-height: 0;
+  transition: color 0.15s;
+}
+
+.carousel-modal-close:hover {
+  color: #fff;
+}
+
+.carousel-modal-close svg {
+  width: 28px;
+  height: 28px;
+}
+
+.carousel-modal-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+  line-height: 0;
+  transition: background 0.15s;
+}
+
+.carousel-modal-nav--prev { left: 24px; }
+.carousel-modal-nav--next { right: 24px; }
+
+.carousel-modal-nav:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.carousel-modal-nav svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.carousel-modal-dots {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-modal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s;
+}
+
+.carousel-modal-dot.active {
+  background: #fff;
+}
+
 /* IT Skills */
 .it .it-skills .wrapper {
   display: table;

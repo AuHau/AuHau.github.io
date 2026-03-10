@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Adam Uhlíř | Photographer</title>
+  <title>Adam Uhlíř | DIY tinker</title>
   <meta name="description" content="Personal web page of Adam Uhlir">
 </svelte:head>
 
