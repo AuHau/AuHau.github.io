@@ -102,6 +102,10 @@ strong {
 .arrow-down { background-position: -457.4px -6px; width: 34px; height: 19px; }
 .arrow-down-orange { background-position: -457px -29px; width: 34px; height: 19px; }
 
+
+.white .arrow-right { background-position: 0 0; width: 19px; height: 35px; }
+.white .arrow-left { background-position: -2px -74px; width: 19px; height: 35px; }
+
 /* ============================================================
    Layout
    ============================================================ */
@@ -380,7 +384,7 @@ nav ul#menu li.active a {
 /* Nav states */
 nav.white .nav-toggle { color: var(--orange); }
 nav.white .logo { background-position: left center; }
-nav.white .arrow-left { background-position: -2px -74px; }
+nav.white .arrow-left {background-position: 0px -117px;}
 nav.white ul#menu li a { color: var(--orange); }
 nav.white ul#menu li.active a,
 nav.white ul#menu li a:hover,
@@ -816,21 +820,58 @@ nav.orange ul#menu li a:focus {
 .it .carousel .carousel-inner {
   overflow: hidden;
   position: relative;
+  height: 300px;
 }
 
 .it .carousel .item {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
 }
 
 .it .carousel .item.active {
-  display: block;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.it .carousel .item.exit-left {
+  visibility: visible;
+  transform: translateX(-100%);
+}
+
+.it .carousel .item.exit-right {
+  visibility: visible;
+  transform: translateX(100%);
+}
+
+.it .carousel .item.enter-right {
+  visibility: visible;
+  transform: translateX(100%);
+  transition: none;
+}
+
+.it .carousel .item.enter-left {
+  visibility: visible;
+  transform: translateX(-100%);
+  transition: none;
 }
 
 .it .carousel .item-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
+  height: 100%;
+}
+
+.it .carousel .item-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .it .carousel .control {
@@ -915,7 +956,7 @@ nav.orange ul#menu li a:focus {
 
   nav.orange .nav-toggle { color: var(--orange); }
   nav.orange .logo { background-position: left center; }
-  nav.orange .arrow-left { background-position: -2px -74px; }
+  nav.orange .arrow-left {background-position: -2px -74px;}
   nav.orange ul#menu li a { color: var(--orange); }
   nav.orange ul#menu li.active a,
   nav.orange ul#menu li a:hover,

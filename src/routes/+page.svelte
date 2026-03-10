@@ -212,7 +212,7 @@ function getAge(birthday) {
         </a>
       </div>
       <div class="footer">
-        Photos of me by Kateřina Bodorová<br>
+        Photos of me by <a href="https://www.photovrastil.cz/" target="_blank">Ondřej Vraštil</a><br>
         &copy; <span id="year">2019</span> Adam Uhlíř
       </div>
     </div>
