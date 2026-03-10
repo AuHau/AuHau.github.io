@@ -6,7 +6,6 @@
   const navItems = [
     { anchor: 'it-skills', label: 'My IT skills' },
     { anchor: 'projects-gitrack', label: 'My projects', id: 'projects', matchPrefix: 'projects' },
-    { anchor: 'references', label: 'References' },
   ];
 
   const daGuiImages = [
@@ -218,70 +217,6 @@
         </div>
       </div>
       <a href="#" class="nextFrame" onclick={nextFrame}></a>
-    </div>
-
-    <div class="frame references pt orange" data-anchor="references">
-      <div class="wrapper">
-        <h2>References</h2>
-        <div class="references-container">
-          <div class="col-md-4 reference">
-            <img src="/images/mibcon.png" alt="Mibcon website">
-            <div class="description">
-              <a href="http://www.mibcon.cz" target="_blank" rel="noopener" class="title">Mibcon a.s.</a>
-              <div class="work-done"><div>Frontend</div><div>Backend</div></div>
-              I created the complete front-end for this website. It utilizes Masonry for the layout system. I
-              also helped with smaller parts of the back-end.
-              <span class="more">Unfortunately the diamond of my work on this project is not publicly accessible since it is the article creation form in the Admin section.</span>
-            </div>
-          </div>
-          <div class="col-md-4 reference">
-            <img src="/images/protokolos.png" alt="Protokolos website">
-            <div class="description">
-              <a href="http://www.protokolos.com/en/" target="_blank" rel="noopener" class="title">Protokolos</a>
-              <div class="work-done"><div>Frontend</div><div>Backend</div></div>
-              The major part of my work was on the back-end side, where I collaborated on creating the whole
-              back-end platform from scratch. Moreover I created the front-end part for the mobile application.
-              <span class="more">The application is still under development.</span>
-            </div>
-          </div>
-          <div class="col-md-4 reference">
-            <img src="/images/trq.png" alt="TimeResq website">
-            <div class="description">
-              <div class="title">TimeResQ</div>
-              <div class="work-done"><div>Frontend</div><div>Backend</div></div>
-              I took over front-end development in a later stage of the project. I was also majorly involved
-              in back-end development, where I implemented the Social login feature, amongst other things.
-            </div>
-          </div>
-          <div class="col-md-4 reference">
-            <img src="/images/nad-rokytkou.png" alt="Nad Rokytkou website">
-            <div class="description">
-              <a href="http://www.nadrokytkou.cz/en/" target="_blank" rel="noopener" class="title">Nad Rokytkou</a>
-              <div class="work-done"><div>Frontend</div></div>
-              For this developer project I completely created the whole front-end part for the desktop
-              version. The mobile version was done by my colleague.
-            </div>
-          </div>
-          <div class="col-md-4 reference">
-            <img src="/images/csac.jpg.png" alt="ČSA Cargo website">
-            <div class="description">
-              <a href="http://www.csacargo.cz/en" target="_blank" rel="noopener" class="title">ČSA Cargo</a>
-              <div class="work-done"><div>Frontend</div></div>
-              My main task during the development of this website was to create the front-end template for our
-              CMS system.
-            </div>
-          </div>
-          <div class="col-md-4 reference">
-            <img src="/images/gofis.jpg" alt="Gofis website">
-            <div class="description">
-              <div class="title">GOFIS</div>
-              <div class="work-done"><div>Frontend</div></div>
-              As my first project at Designeo, I was helping with the styling of this project. It is an
-              internal financial system.
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
