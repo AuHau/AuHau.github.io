@@ -8,10 +8,10 @@
   ];
 
   const diyPhotos = [
-    { src: '/images/diy/diy1.jpg', alt: 'DIY project 1' },
-    { src: '/images/diy/diy2.jpg', alt: 'DIY project 2' },
-    { src: '/images/diy/diy3.jpg', alt: 'DIY project 3' },
-    { src: '/images/diy/diy4.jpg', alt: 'DIY project 4' },
+    { photo: '/images/diy/diy1.jpg', alt: 'DIY project 1' },
+    { photo: '/images/diy/diy2.jpg', alt: 'DIY project 2' },
+    { photo: '/images/diy/diy3.jpg', alt: 'DIY project 3' },
+    { photo: '/images/diy/diy4.jpg', alt: 'DIY project 4' },
   ];
 
   let modalOpen = $state(false);
@@ -67,7 +67,7 @@
     <div class="frame skills-description pt white" data-anchor="it-skills">
       {#each diyPhotos as photo, i}
         <button class="diy-photo diy-photo-{i + 1}" onclick={() => openModal(i)} aria-label="Open {photo.alt}">
-          <img src={photo.src} alt={photo.alt}>
+          <img src={photo.photo} alt={photo.alt}>
         </button>
       {/each}
       <div class="description">
@@ -111,12 +111,12 @@
           </div>
         </div>
         <div class="column text-center">
-          <Carousel images={[
+          <Carousel items={[
             { youtube: 'b7_Dzy0piuk', alt: 'Cabinet in action' },
-            { src: '/images/diy/projector/render.png', alt: 'Fusion 360 model of the cabinet' },
-            { src: '/images/diy/projector/prototyping-done.jpeg', alt: 'Electronic\'s prototype' },
-            { src: '/images/diy/projector/ready-to-be-installed.jpeg', alt: 'Electronic\'s ready to be installed' },
-            { src: '/images/diy/projector/electronic-installed.jpeg', alt: 'Electronic\'s installed' },
+            { photo: '/images/diy/projector/render.png', alt: 'Fusion 360 model of the cabinet' },
+            { photo: '/images/diy/projector/prototyping-done.jpeg', alt: 'Electronic\'s prototype' },
+            { photo: '/images/diy/projector/ready-to-be-installed.jpeg', alt: 'Electronic\'s ready to be installed' },
+            { photo: '/images/diy/projector/electronic-installed.jpeg', alt: 'Electronic\'s installed' },
           ]} interval={4000} />
         </div>
       </div>
@@ -141,12 +141,12 @@
           </div>
         </div>
         <div class="column text-center">
-          <Carousel images={[
-            { src: '/images/diy/space_control/current_state_front.jpg', alt: 'Current state of the panel. Front view' },
-            { src: '/images/diy/space_control/current_state_back.jpg', alt: 'Current state of the panel. Inside of the panel.' },
-            { src: '/images/diy/space_control/backlighting_front.jpg', alt: 'Back-lighting of the panel. Front view.' },
-            { src: '/images/diy/space_control/backlighting_back.jpg', alt: 'Back-lighting of the panel. Back view.' },
-            { src: '/images/diy/space_control/housing_wip.jpg', alt: 'WIP of the housing for the panel.' },
+          <Carousel items={[
+            { photo: '/images/diy/space_control/current_state_front.jpg', alt: 'Current state of the panel. Front view' },
+            { photo: '/images/diy/space_control/current_state_back.jpg', alt: 'Current state of the panel. Inside of the panel.' },
+            { photo: '/images/diy/space_control/backlighting_front.jpg', alt: 'Back-lighting of the panel. Front view.' },
+            { photo: '/images/diy/space_control/backlighting_back.jpg', alt: 'Back-lighting of the panel. Back view.' },
+            { photo: '/images/diy/space_control/housing_wip.jpg', alt: 'WIP of the housing for the panel.' },
           ]} interval={4000} />
         </div>
       </div>
@@ -170,10 +170,10 @@
           </div>
         </div>
         <div class="column text-center">
-          <Carousel images={[
-            { src: '/images/diy/panak/in_action.jpg', alt: 'Operation in process' },
-            { src: '/images/diy/panak/transporting.jpg', alt: 'Simulator on the way to the summer camp' },
-            { src: '/images/diy/panak/wip.jpeg', alt: 'Work in progress' },
+          <Carousel items={[
+            { photo: '/images/diy/panak/in_action.jpg', alt: 'Operation in process' },
+            { photo: '/images/diy/panak/transporting.jpg', alt: 'Simulator on the way to the summer camp' },
+            { photo: '/images/diy/panak/wip.jpeg', alt: 'Work in progress' },
           ]} interval={4000} />
         </div>
       </div>
@@ -206,18 +206,20 @@
             <div>Woodworking</div><div>Garden</div>
           </div>
           <div class="text">
-            Created a second raised garden bed with help from my son. Now we are growing veggies!
+            Created a second raised garden bed with help from my son.<br>Now we are growing veggies!
           </div>
         </div>
         <div class="column text-center">
-          <Carousel images={[
-            { src: '/images/diy/panak/in_action.jpg', alt: 'Operation in process' },
-            { src: '/images/diy/panak/transporting.jpg', alt: 'Simulator on the way to the summer camp' },
-            { src: '/images/diy/panak/wip.jpeg', alt: 'Work in progress' },
+          <Carousel items={[
+            { photo: '/images/diy/garden_box/done.jpg', alt: 'Finished bed' },
+            { photo: '/images/diy/garden_box/wip1.jpg', alt: 'Finished bed' },
+            { photo: '/images/diy/garden_box/wip2.jpg', alt: 'Finished bed' },
+            { photo: '/images/diy/garden_box/helper2.jpg', alt: 'Having helper helps!' },
+            { video: '/images/diy/garden_box/helper1.MOV', alt: 'Having helper helps!' },
+            { photo: '/images/diy/garden_box/almost_done.jpg', alt: 'Now only to fill it up.' },
           ]} interval={4000} />
         </div>
       </div>
-      <a href="#" class="nextFrame" onclick={nextFrame}></a>
     </div>
   </div>
 </div>
@@ -238,7 +240,7 @@
     </button>
 
     <div class="carousel-modal-content">
-      <img src={diyPhotos[modalIndex].src} alt={diyPhotos[modalIndex].alt}>
+      <img src={diyPhotos[modalIndex].photo} alt={diyPhotos[modalIndex].alt}>
     </div>
 
     <button class="carousel-modal-nav carousel-modal-nav--next" onclick={modalNext} aria-label="Next image">

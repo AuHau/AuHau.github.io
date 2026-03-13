@@ -1,10 +1,14 @@
 <script>
   import { onMount, tick } from 'svelte';
 
-  let { images = [], interval = 4000 } = $props();
+  let { items = [], interval = 4000 } = $props();
 
   function isYoutube(slide) {
     return !!slide.youtube;
+  }
+
+  function isVideo(slide) {
+    return !!slide.video;
   }
 
   function youtubeThumbnail(id) {
@@ -23,8 +27,8 @@
     busy = true;
     direction = dir;
     const newIdx = dir === 'next'
-      ? (current + 1) % images.length
-      : (current - 1 + images.length) % images.length;
+      ? (current + 1) % items.length
+      : (current - 1 + items.length) % items.length;
 
     entering = newIdx;
     await tick();
@@ -46,6 +50,7 @@
   let timer;
 
   function startTimer() {
+    clearInterval(timer);
     timer = setInterval(next, interval);
   }
 
@@ -74,11 +79,11 @@
   }
 
   function modalPrev() {
-    modalIndex = (modalIndex - 1 + images.length) % images.length;
+    modalIndex = (modalIndex - 1 + items.length) % items.length;
   }
 
   function modalNext() {
-    modalIndex = (modalIndex + 1) % images.length;
+    modalIndex = (modalIndex + 1) % items.length;
   }
 
   function onKeydown(e) {
@@ -97,7 +102,7 @@
 
 <div class="carousel slide" onmouseenter={stopTimer} onmouseleave={startTimer}>
   <div class="carousel-inner" role="listbox">
-    {#each images as image, i}
+    {#each items as item, i}
       <div class="item"
            class:active={i === current}
            class:exit-left={i === previous && direction === 'next'}
@@ -105,12 +110,19 @@
            class:enter-right={i === entering && direction === 'next'}
            class:enter-left={i === entering && direction === 'prev'}>
         <div class="item-wrapper">
-          <button class="img-open" onclick={() => openModal(i)} aria-label="Open {image.alt}">
-            <img src={isYoutube(image) ? youtubeThumbnail(image.youtube) : image.src} alt={image.alt}>
-            {#if isYoutube(image)}
+          <button class="img-open" onclick={() => openModal(i)} aria-label="Open {item.alt}">
+            {#if isYoutube(item)}
+              <img src={youtubeThumbnail(item.youtube)} alt={item.alt}>
               <span class="yt-play-icon" aria-hidden="true">
                 <svg viewBox="0 0 68 48"><path d="M66.5 7.7A8.5 8.5 0 0 0 60.7 2C55.4.5 34 .5 34 .5S12.6.5 7.3 2A8.5 8.5 0 0 0 1.5 7.7C0 13 0 24 0 24s0 11 1.5 16.3A8.5 8.5 0 0 0 7.3 46C12.6 47.5 34 47.5 34 47.5s21.4 0 26.7-1.5a8.5 8.5 0 0 0 5.8-5.7C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#f00"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg>
               </span>
+            {:else if isVideo(item)}
+              <video src={item.video} preload="metadata" muted playsinline></video>
+              <span class="yt-play-icon" aria-hidden="true">
+                <svg viewBox="0 0 68 48"><path d="M34 4L64 44H4z" fill="rgba(0,0,0,0.6)"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg>
+              </span>
+            {:else}
+              <img src={item.photo} alt={item.alt}>
             {/if}
           </button>
         </div>
@@ -128,7 +140,7 @@
 </div>
 
 {#if modalOpen}
-  <div class="carousel-modal-overlay" onclick={onOverlayClick} role="dialog" aria-modal="true" aria-label={images[modalIndex].alt}>
+  <div class="carousel-modal-overlay" onclick={onOverlayClick} role="dialog" aria-modal="true" aria-label={items[modalIndex].alt}>
     <button class="carousel-modal-close" onclick={closeModal} aria-label="Close">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <line x1="18" y1="6" x2="6" y2="18"/>
@@ -143,18 +155,22 @@
     </button>
 
     <div class="carousel-modal-content">
-      {#if isYoutube(images[modalIndex])}
+      {#if isYoutube(items[modalIndex])}
         <div class="carousel-modal-video">
           <iframe
-            src="https://www.youtube.com/embed/{images[modalIndex].youtube}?autoplay=1"
-            title={images[modalIndex].alt}
+            src="https://www.youtube.com/embed/{items[modalIndex].youtube}?autoplay=1"
+            title={items[modalIndex].alt}
             allow="autoplay; encrypted-media; picture-in-picture"
             allowfullscreen
           ></iframe>
         </div>
+      {:else if isVideo(items[modalIndex])}
+        <div class="carousel-modal-video">
+          <video src={items[modalIndex].video} controls autoplay muted playsinline></video>
+        </div>
       {:else}
-        <img src={images[modalIndex].src} alt={images[modalIndex].alt}>
-        <p class="carousel-modal-caption">{images[modalIndex].alt}</p>
+        <img src={items[modalIndex].photo} alt={items[modalIndex].alt}>
+        <p class="carousel-modal-caption">{items[modalIndex].alt}</p>
       {/if}
     </div>
 
@@ -165,7 +181,7 @@
     </button>
 
     <div class="carousel-modal-dots">
-      {#each images as _, i}
+      {#each items as _, i}
         <button class="carousel-modal-dot" class:active={i === modalIndex} onclick={() => modalIndex = i} aria-label="Image {i + 1}"></button>
       {/each}
     </div>

@@ -100,27 +100,26 @@ function getAge(birthday) {
           <div class="col-md-6">
             <h3>Work experience</h3>
             <ul>
-              <li><a href="https://logos.co/">Logos Storage / Codex</a> - Senior Software Engineer<br>Nop
-
-                (Feb 2023 - present)
+              <li><a href="https://logos.co/">Logos Storage / Codex</a> - Senior Software Engineer<br>
+                (Remote; Feb 2023 - present)
               </li>
               <li><a href="https://ethswarm.org/">Swarm Foundation</a> - Senior Software Engineer<br>
-                (Feb 2021 - Jan 2023)
+                (Remote; Feb 2021 - Jan 2023)
               </li>
               <li><a href="https://iovlabs.org/">IOV Labs</a> - Senior Software Engineer<br>
-                (Nov 2019 - Feb 2021)
+                (Remote; Nov 2019 - Feb 2021)
               </li>
               <li><a href="https://www.sap.com/">SAP</a> - Technology Associate in Multi-cloud Technology Office<br>
-                (June 2018 - June 2019)
+                (Palo Alto, USA; June 2018 - June 2019)
               </li>
               <li><a href="https://u.plus/">Usertech s.r.o.</a> - Backend developer<br>
-                (October 2017 - May 2018)
+                (Prague, Czechia; October 2017 - May 2018)
               </li>
               <li><a href="https://www.honeywell.com/">Honeywell s.r.o.</a> - Research engineer<br>
-                (July 2017 - December 2017)
+                (Prague, Czechia; July 2017 - December 2017)
               </li>
               <li><a href="http://www.adastra.cz/en">Adastra s.r.o.</a> - Big Data consultant<br>
-                (February 2017 - May 2017)
+                (Prague, Czechia; February 2017 - May 2017)
               </li>
               <li>Multiple companies - Web developer<br>
                 (May 2009 - December 2015)

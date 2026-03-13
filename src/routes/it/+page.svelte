@@ -8,9 +8,9 @@
   ];
 
   const daGuiImages = [
-    { src: '/images/daGui-logo.png', alt: 'daGui logo' },
-    { src: '/images/daGui-design.png', alt: 'daGui design' },
-    { src: '/images/daGui_exec.png', alt: 'daGui execution' },
+    { photo: '/images/daGui-logo.png', alt: 'daGui logo' },
+    { photo: '/images/daGui-design.png', alt: 'daGui design' },
+    { photo: '/images/daGui_exec.png', alt: 'daGui execution' },
   ];
 
   function nextFrame(e) {
@@ -151,7 +151,7 @@
           </div>
         </div>
         <div class="column text-center">
-          <Carousel images={daGuiImages} interval={4000} />
+          <Carousel items={daGuiImages} interval={4000} />
         </div>
       </div>
       <a href="#" class="nextFrame" onclick={nextFrame}></a>
@@ -215,7 +215,6 @@
           <img src="/images/picker.png" alt="Selection Picker">
         </div>
       </div>
-      <a href="#" class="nextFrame" onclick={nextFrame}></a>
     </div>
   </div>
 </div>

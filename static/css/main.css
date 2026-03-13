@@ -866,7 +866,8 @@ nav.orange ul#menu li a:focus {
   height: 100%;
 }
 
-.carousel .item-wrapper img {
+.carousel .item-wrapper img,
+.carousel .item-wrapper video {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
@@ -1036,17 +1037,20 @@ nav.orange ul#menu li a:focus {
   opacity: 1;
 }
 
-/* YouTube iframe in modal — 16:9 responsive */
+/* Video/iframe in modal — constrained to viewport */
 .carousel-modal-video {
   width: min(90vw, 960px);
+  max-height: 80vh;
   aspect-ratio: 16 / 9;
 }
 
-.carousel-modal-video iframe {
+.carousel-modal-video iframe,
+.carousel-modal-video video {
   width: 100%;
   height: 100%;
   border: none;
   display: block;
+  max-height: 80vh;
 }
 
 /* Intro/skills frame (shared by IT and DIY pages) */

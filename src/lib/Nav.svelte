@@ -62,6 +62,7 @@
             const anchor = entry.target.dataset.anchor;
             if (anchor) {
               activeAnchor = anchor;
+              history.replaceState(null, '', '#' + anchor);
               menuColorSwitcher();
             }
           }
@@ -69,6 +70,11 @@
       }, { root, threshold: 0.6 });
       document.querySelectorAll('.frame[data-anchor]').forEach(f => observer.observe(f));
     };
+
+    // Assign id to each frame from its data-anchor for deep linking
+    document.querySelectorAll('.frame[data-anchor]').forEach(f => {
+      f.id = f.dataset.anchor;
+    });
 
     createObserver();
 
@@ -82,9 +88,16 @@
     window.addEventListener('resize', onResize);
     menuColorSwitcher();
 
-    // Set initial active to first frame
-    const firstFrame = document.querySelector('.frame[data-anchor]');
-    if (firstFrame) activeAnchor = firstFrame.dataset.anchor;
+    // Handle initial hash or fall back to first frame
+    const hash = window.location.hash.slice(1);
+    const targetFrame = hash ? document.querySelector(`.frame[data-anchor="${hash}"]`) : null;
+    if (targetFrame) {
+      activeAnchor = hash;
+      setTimeout(() => targetFrame.scrollIntoView(), 0);
+    } else {
+      const firstFrame = document.querySelector('.frame[data-anchor]');
+      if (firstFrame) activeAnchor = firstFrame.dataset.anchor;
+    }
 
     return () => {
       observer.disconnect();
