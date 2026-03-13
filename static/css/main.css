@@ -102,7 +102,6 @@ strong {
 .arrow-down { background-position: -457.4px -6px; width: 34px; height: 19px; }
 .arrow-down-orange { background-position: -457px -29px; width: 34px; height: 19px; }
 
-
 .white .arrow-right { background-position: 0 0; width: 19px; height: 35px; }
 .white .arrow-left { background-position: -2px -74px; width: 19px; height: 35px; }
 
@@ -384,7 +383,6 @@ nav ul#menu li.active a {
 /* Nav states */
 nav.white .nav-toggle { color: var(--orange); }
 nav.white .logo { background-position: left center; }
-nav.white .arrow-left {background-position: 0px -117px;}
 nav.white ul#menu li a { color: var(--orange); }
 nav.white ul#menu li.active a,
 nav.white ul#menu li a:hover,
@@ -723,65 +721,65 @@ nav.orange ul#menu li a:focus {
 }
 
 /* ============================================================
-   IT Page (pages/it.less)
+   Portfolio Page (project layout — shared by IT and DIY pages)
    ============================================================ */
-.it .project-container .column {
+.project-container .column {
   display: table-cell;
   width: 50%;
   vertical-align: middle;
 }
 
-.it .project-container .column:first-child {
+.project-container .column:first-child {
   width: calc(50% - 30px);
   padding-right: 30px;
 }
 
-.it .project-container {
+.project-container {
   display: table;
 }
 
-.it .project-container.reversed {
+.project-container.reversed {
   direction: rtl;
 }
 
-.it .project-container.reversed .column:first-child {
+.project-container.reversed .column:first-child {
   width: 50%;
   padding-right: 0;
 }
 
-.it .project-container.reversed .column:last-child {
+.project-container.reversed .column:last-child {
   width: calc(50% - 30px);
   padding-right: 30px;
 }
 
-.it .project-container img {
+.project-container img {
   max-width: 100%;
 }
 
-.it .project-container h2 {
+.project-container h2 {
   text-align: left;
   margin-bottom: 10px;
 }
 
-.it .project-container .text {
+.project-container .text {
   margin-bottom: 40px;
   text-align: left;
   direction: ltr;
 }
 
-.it .project-container .tags {
+.project-container .tags {
   margin-bottom: 10px;
   text-align: left;
 }
 
-.it .project-container .tags div {
+.project-container .tags div {
   display: inline-block;
   padding: 2px 15px;
   margin-right: 10px;
   margin-bottom: 10px;
 }
 
-.it .project-container .check-github {
+.project-container .check-github {
   width: auto;
   font-size: 18px;
   padding: 7px 30px 8px;
@@ -794,7 +792,7 @@ nav.orange ul#menu li a:focus {
   gap: 8px;
 }
 
-.it .project-container .check-github svg {
+.project-container .check-github svg {
   width: 22px;
   height: 22px;
   fill: currentColor;
@@ -802,28 +800,28 @@ nav.orange ul#menu li a:focus {
 }
 
 /* Tag colors */
-.it .frame.orange .project-container .tags div {
+.frame.orange .project-container .tags div {
   background-color: var(--white);
   color: var(--orange);
 }
 
-.it .frame.white .project-container .tags div {
+.frame.white .project-container .tags div {
   background-color: var(--orange);
   color: var(--white);
 }
 
 /* Carousel */
-.it .carousel {
+.carousel {
   position: relative;
 }
 
-.it .carousel .carousel-inner {
+.carousel .carousel-inner {
   overflow: hidden;
   position: relative;
   height: 300px;
 }
 
-.it .carousel .item {
+.carousel .item {
   position: absolute;
   top: 0;
   left: 0;
@@ -834,47 +832,47 @@ nav.orange ul#menu li a:focus {
   transition: transform 0.4s ease-in-out;
 }
 
-.it .carousel .item.active {
+.carousel .item.active {
   visibility: visible;
   transform: translateX(0);
 }
 
-.it .carousel .item.exit-left {
+.carousel .item.exit-left {
   visibility: visible;
   transform: translateX(-100%);
 }
 
-.it .carousel .item.exit-right {
+.carousel .item.exit-right {
   visibility: visible;
   transform: translateX(100%);
 }
 
-.it .carousel .item.enter-right {
+.carousel .item.enter-right {
   visibility: visible;
   transform: translateX(100%);
   transition: none;
 }
 
-.it .carousel .item.enter-left {
+.carousel .item.enter-left {
   visibility: visible;
   transform: translateX(-100%);
   transition: none;
 }
 
-.it .carousel .item-wrapper {
+.carousel .item-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.it .carousel .item-wrapper img {
+.carousel .item-wrapper img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
 }
 
-.it .carousel .control {
+.carousel .control {
   display: none;
   position: absolute;
   top: 50%;
@@ -885,14 +883,14 @@ nav.orange ul#menu li a:focus {
   padding: 5px;
 }
 
-.it .carousel .control.left { left: 10px; }
-.it .carousel .control.right { right: 10px; }
+.carousel .control.left { left: 10px; }
+.carousel .control.right { right: 10px; }
 
-.it .carousel:hover .control {
+.carousel:hover .control {
   display: inline-block;
 }
 
-.it .carousel .item-wrapper .img-open {
+.carousel .item-wrapper .img-open {
   background: none;
   border: none;
   padding: 0;
@@ -1017,13 +1015,47 @@ nav.orange ul#menu li a:focus {
   background: #fff;
 }
 
-/* IT Skills */
-.it .it-skills .wrapper {
+/* YouTube play icon overlay on carousel thumbnail */
+.img-open {
+  position: relative;
+}
+
+.yt-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  opacity: 0.9;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.img-open:hover .yt-play-icon {
+  opacity: 1;
+}
+
+/* YouTube iframe in modal — 16:9 responsive */
+.carousel-modal-video {
+  width: min(90vw, 960px);
+  aspect-ratio: 16 / 9;
+}
+
+.carousel-modal-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Intro/skills frame (shared by IT and DIY pages) */
+.skills-description .wrapper {
   display: table;
   width: 95%;
 }
 
-.it .it-skills .collage-container {
+.skills-description .collage-container {
   display: table-cell;
   width: calc(30% - 30px);
   padding-right: 30px;
@@ -1031,10 +1063,111 @@ nav.orange ul#menu li a:focus {
   text-align: center;
 }
 
-.it .it-skills .description {
+.skills-description .description {
   display: table-cell;
   width: 70%;
   vertical-align: middle;
+}
+
+/* DIY skills-description: scattered photos layout */
+.diy .skills-description .description {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 32px 36px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 4px;
+}
+
+.diy-photo {
+  position: absolute;
+  width: 260px;
+  padding: 0;
+  background: none;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 3;
+  outline: none;
+}
+
+.diy-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.diy-photo-1 {
+  top: 8%;
+  left: 4%;
+  transform: rotate(-7deg);
+}
+.diy-photo-1:hover { transform: rotate(-7deg) scale(1.05); box-shadow: 0 8px 28px rgba(0,0,0,0.28); }
+
+.diy-photo-2 {
+  top: 8%;
+  right: 4%;
+  transform: rotate(5deg);
+}
+.diy-photo-2:hover { transform: rotate(5deg) scale(1.05); box-shadow: 0 8px 28px rgba(0,0,0,0.28); }
+
+.diy-photo-3 {
+  bottom: 10%;
+  left: 4%;
+  transform: rotate(6deg);
+}
+.diy-photo-3:hover { transform: rotate(6deg) scale(1.05); box-shadow: 0 8px 28px rgba(0,0,0,0.28); }
+
+.diy-photo-4 {
+  bottom: 10%;
+  right: 4%;
+  transform: rotate(-8deg);
+}
+.diy-photo-4:hover { transform: rotate(-8deg) scale(1.05); box-shadow: 0 8px 28px rgba(0,0,0,0.28); }
+
+@media screen and (max-width: 1200px) {
+  .diy-photo {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .diy .skills-description {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 20px 20px;
+  }
+  .diy-photo {
+    position: static;
+    width: calc(50% - 16px);
+    transform: none !important;
+    order: 1;
+    margin: 8px;
+    flex-shrink: 0;
+  }
+  .diy-photo:hover { transform: scale(1.05) !important; }
+  .diy .skills-description .description {
+    order: 0;
+    flex: 0 0 100%;
+    max-width: 90%;
+    background: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .diy-photo {
+    width: 70%;
+    margin: 8px auto;
+  }
 }
 
 /* ============================================================
@@ -1315,33 +1448,33 @@ nav.orange ul#menu li a:focus {
     font-size: 25px;
   }
 
-  .it .it-skills .collage-container {
+  .it .skills-description .collage-container {
     display: none;
   }
 }
 
 @media screen and (max-width: 740px) {
-  .it .project-container,
-  .it .project-container.reversed {
+  .project-container,
+  .project-container.reversed {
     display: block;
   }
 
-  .it .project-container .column,
-  .it .project-container .column:first-child,
-  .it .project-container .column:last-child,
-  .it .project-container.reversed .column,
-  .it .project-container.reversed .column:first-child,
-  .it .project-container.reversed .column:last-child {
+  .project-container .column,
+  .project-container .column:first-child,
+  .project-container .column:last-child,
+  .project-container.reversed .column,
+  .project-container.reversed .column:first-child,
+  .project-container.reversed .column:last-child {
     display: block;
     width: 100%;
     padding-right: 0;
   }
 
-  .it .project-container .column:last-child {
+  .project-container .column:last-child {
     margin-top: 30px;
   }
 
-  .it .project-container.reversed {
+  .project-container.reversed {
     direction: ltr;
   }
 
@@ -1370,7 +1503,7 @@ nav.orange ul#menu li a:focus {
   .main .contact .contact-details { margin-top: 100px; }
   .main .contact .networks { margin-top: 100px; }
 
-  .it .project-container h2 { margin-bottom: 40px; }
+  .project-container h2 { margin-bottom: 40px; }
 }
 
 @media screen and (min-width: 1750px) {

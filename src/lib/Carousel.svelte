@@ -3,6 +3,14 @@
 
   let { images = [], interval = 4000 } = $props();
 
+  function isYoutube(slide) {
+    return !!slide.youtube;
+  }
+
+  function youtubeThumbnail(id) {
+    return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+  }
+
   // --- Carousel state ---
   let current = $state(0);
   let previous = $state(-1);
@@ -57,10 +65,12 @@
   function openModal(i) {
     modalIndex = i;
     modalOpen = true;
+    stopTimer();
   }
 
   function closeModal() {
     modalOpen = false;
+    startTimer();
   }
 
   function modalPrev() {
@@ -95,8 +105,13 @@
            class:enter-right={i === entering && direction === 'next'}
            class:enter-left={i === entering && direction === 'prev'}>
         <div class="item-wrapper">
-          <button class="img-open" onclick={() => openModal(i)} aria-label="Open image">
-            <img src={image.src} alt={image.alt}>
+          <button class="img-open" onclick={() => openModal(i)} aria-label="Open {image.alt}">
+            <img src={isYoutube(image) ? youtubeThumbnail(image.youtube) : image.src} alt={image.alt}>
+            {#if isYoutube(image)}
+              <span class="yt-play-icon" aria-hidden="true">
+                <svg viewBox="0 0 68 48"><path d="M66.5 7.7A8.5 8.5 0 0 0 60.7 2C55.4.5 34 .5 34 .5S12.6.5 7.3 2A8.5 8.5 0 0 0 1.5 7.7C0 13 0 24 0 24s0 11 1.5 16.3A8.5 8.5 0 0 0 7.3 46C12.6 47.5 34 47.5 34 47.5s21.4 0 26.7-1.5a8.5 8.5 0 0 0 5.8-5.7C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#f00"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg>
+              </span>
+            {/if}
           </button>
         </div>
       </div>
@@ -128,8 +143,19 @@
     </button>
 
     <div class="carousel-modal-content">
-      <img src={images[modalIndex].src} alt={images[modalIndex].alt}>
-      <p class="carousel-modal-caption">{images[modalIndex].alt}</p>
+      {#if isYoutube(images[modalIndex])}
+        <div class="carousel-modal-video">
+          <iframe
+            src="https://www.youtube.com/embed/{images[modalIndex].youtube}?autoplay=1"
+            title={images[modalIndex].alt}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      {:else}
+        <img src={images[modalIndex].src} alt={images[modalIndex].alt}>
+        <p class="carousel-modal-caption">{images[modalIndex].alt}</p>
+      {/if}
     </div>
 
     <button class="carousel-modal-nav carousel-modal-nav--next" onclick={modalNext} aria-label="Next image">

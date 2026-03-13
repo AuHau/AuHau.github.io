@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
   import Nav from '$lib/Nav.svelte';
   import Carousel from '$lib/Carousel.svelte';
 
@@ -31,7 +30,7 @@
 <div class="it">
   <Nav items={navItems} showBack={true} />
   <div class="page">
-    <div class="frame it-skills pt white" data-anchor="it-skills">
+    <div class="frame skills-description pt white" data-anchor="it-skills">
       <div class="wrapper">
         <div class="collage-container">
           <img src="/images/kolaz.png" alt="Collage of Logos of technologies">
