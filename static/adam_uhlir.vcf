@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:4.0
+N:Uhlíř;Adam;;MSc.;
+EMAIL;INTERNET:adam@uhlir.dev
+TEL;CELL:+420607963319
+URL:https://www.uhlir.dev
+PHOTO;MEDIATYPE=image/jpeg:https://uhlir.dev/build/images/me_square.jpg
+KEY;MEDIATYPE=application/pgp-keys:https://uhlir.dev/key.pgp
+LOGO;MEDIATYPE=image/png:https://uhlir.dev/build/images/logo.png
+X-TWITTER:UhlirAdam
+END:VCARD
