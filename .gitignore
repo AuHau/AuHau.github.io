@@ -52,7 +52,7 @@ crashlytics-build.properties
 node_modules
 
 # SvelteKit
-build/
+/build/
 .svelte-kit/
 
 .DS_Store
