@@ -62,7 +62,7 @@
             const anchor = entry.target.dataset.anchor;
             if (anchor) {
               activeAnchor = anchor;
-              history.replaceState(null, '', '#' + anchor);
+              history.replaceState(history.state, '', '#' + anchor);
               menuColorSwitcher();
             }
           }
